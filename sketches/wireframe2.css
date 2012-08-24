@@ -1,0 +1,92 @@
+#sidebar-container {
+  position: fixed;
+  background-color: rgb(64, 0, 64);
+  color: #ccc;
+  width: 27%;
+  height: 100%;
+
+  background-image: -moz-linear-gradient(left,  rgba(64, 0, 64, 0), rgba(64, 0, 64, 0.6), rgba(64, 0, 64, 1.0)), url('floral-Background-slice-1.png');
+  background-repeat: repeat-y;
+  background-size: 100px;
+
+  border-right: 4px solid #bbb;
+}
+
+#content-container {
+  width: 73%;
+  margin-left: 27%;
+}
+
+#sidebar {
+  text-align: right;
+  padding-top: 12px;
+  height: 100%;
+  position: relative;
+}
+
+#sidebar h1 {
+  font-family: 'Mate', Georgia;
+  font-size: 320%;
+  font-style: italic;
+  height: 72px;
+  margin-right: 24px;
+}
+
+#sidebar li {
+  font-size: 120%;
+  margin: 24px;
+  letter-spacing: 4px;
+}
+
+#sidebar li:first-child {
+  margin-top: 0;
+}
+
+#sidebar a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+#save-the-date {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 7px;
+
+  font-family: 'Mate', Georgia;
+  text-align: center;
+  background-color: #bbb;
+  color: #121;
+
+  width: 220px;
+  height: 220px;
+
+  font-size: 48px;
+}
+
+#save-the-date h2 {
+  font-size: 50%;
+  white-space: nowrap;
+  padding-top: 30px;
+}
+
+#save-the-date .year {
+  font-size: 160%;
+}
+
+#content {
+  padding: 1em;
+  color: #343;
+}
+
+#content h2 {
+  font-family: 'Mate', Georgia;
+  font-size: 180%;
+  line-height: 60px;
+  color: #222;
+}
+
+#content p {
+  margin: 1em;
+  line-height: 1.2em;
+}
