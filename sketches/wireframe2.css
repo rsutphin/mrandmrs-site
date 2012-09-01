@@ -82,19 +82,20 @@ h1, h2, h3 {
 
   font-family: 'Imprima', Helvetica, sans-serif;
   text-align: center;
+  line-height: 1.1;
   background-color: #eee;
   color: #121;
 
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
 
-  font-size: 48px;
+  font-size: 40px;
 }
 
 #save-the-date h2 {
   font-size: 53%;
   white-space: nowrap;
-  padding-top: 30px;
+  padding-top: 24px;
   color: #600;
 }
 
