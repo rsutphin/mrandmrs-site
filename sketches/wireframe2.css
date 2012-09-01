@@ -10,7 +10,7 @@ h1, h2, h3 {
   position: fixed;
   background-color: rgb(64, 0, 64);
   color: #ccc;
-  width: 27%;
+  width: 340px;
   height: 100%;
 
   /*background-image: -moz-linear-gradient(left,  rgba(64, 0, 64, 0), rgba(64, 0, 64, 0.6), rgba(64, 0, 64, 1.0)), url('floral-Background-slice-1.png');*/
@@ -22,8 +22,7 @@ h1, h2, h3 {
 }
 
 #content-container {
-  width: 73%;
-  margin-left: 27%;
+  margin-left: 340px;
 }
 
 #sidebar {
@@ -106,6 +105,7 @@ h1, h2, h3 {
 #content {
   padding: 1em;
   color: #343;
+  max-width: 1024px;
 }
 
 #content h2 {
