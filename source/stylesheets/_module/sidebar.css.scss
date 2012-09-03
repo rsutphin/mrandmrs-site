@@ -26,6 +26,10 @@
     height: $sidebar-heading-height;
   }
 
+  ul {
+    font-size: 120%;
+  }
+
   a {
     color: $sidebar-foreground-color;
     text-decoration: none;

@@ -5,7 +5,7 @@ $sidebar-width: 330px;
 }
 
 body {
-  overflow: auto;
+  height: 100%;
 }
 
 #sidebar-container {
@@ -26,4 +26,9 @@ body {
 #content {
   margin-left: 1em;
   max-width: 3 * $sidebar-width;
+  position: relative;
+
+  footer {
+    margin: 3em auto 1em;
+  }
 }

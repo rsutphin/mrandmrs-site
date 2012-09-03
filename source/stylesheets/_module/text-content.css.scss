@@ -3,9 +3,48 @@
 #content {
   padding-top: $sidebar-heading-height;
 
+  color: $content-foreground-color;
   font-family: Georgia, serif;
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: $imprima
+    font-family: $imprima;
+  }
+
+  h2, h3 {
+    margin-top: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    color: $content-link-color;
+    border-bottom: 1px dotted $content-link-color;
+
+    &:visited {
+      color: $content-link-visited;
+      border-color: $content-link-visited;
+    }
+
+    &:hover {
+      color: $content-link-hover;
+      border-color: $content-link-hover;
+      border-bottom-style: solid;
+    }
+  }
+
+  footer {
+    padding-top: 1em;
+    text-align: center;
+    border-top: 1px dotted $content-foreground-color + #777;
+    font-size: 70%;
+    font-family: $imprima;
+
+    a {
+      border-width: 0;
+      color: $content-foreground-color + #777;
+
+      &:hover, &:visited {
+        color: inherit;
+      }
+    }
   }
 }

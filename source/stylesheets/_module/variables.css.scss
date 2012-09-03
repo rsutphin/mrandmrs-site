@@ -1,6 +1,12 @@
 $sidebar-background-color: rgb( 64,   0,  64);
 $sidebar-foreground-color: rgb(192, 192, 192);
 
+$content-foreground-color: #444;
+// $content-link-color: rgb(112, 160, 112);
+$content-link-color: $content-foreground-color + #020;
+$content-link-visited: $content-foreground-color;
+$content-link-hover: $content-link-color;
+
 $sidebar-background-image-width: 100px;
 
 $sidebar-heading-height: 120px;
