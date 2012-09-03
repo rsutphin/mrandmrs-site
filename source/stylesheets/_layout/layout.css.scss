@@ -1,4 +1,4 @@
-$sidebar-width: 340px;
+$sidebar-width: 330px;
 
 %container {
   margin: 0; padding: 0;
@@ -25,5 +25,5 @@ body {
 
 #content {
   margin-left: 1em;
-  max-width: 60em;
+  max-width: 3 * $sidebar-width;
 }
