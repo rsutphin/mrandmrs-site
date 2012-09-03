@@ -1,20 +1,15 @@
 module SiteHelpers
 
   def page_title
-    title = "Set your site title in /helpers/site_helpers.rb"
-    if data.page.title
-      title << " | " + data.page.title
-    end
-    title
+    [
+      'Kelly & Rhett',
+      data.page.title,
+      'May 18, 2013'
+    ].compact.join(' | ')
   end
-  
+
   def page_description
-    if data.page.description
-      description = data.page.description
-    else
-      description = "Set your site description in /helpers/site_helpers.rb"
-    end
-    description
+    data.page.description
   end
 
 end

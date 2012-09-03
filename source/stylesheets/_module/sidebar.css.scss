@@ -1,0 +1,71 @@
+@import '_module/variables';
+
+#sidebar-container {
+  background-color: $sidebar-background-color;
+  color: $sidebar-foreground-color;
+  background-image: url(/images/blackwallpaper-lightened-slice-200px.png);
+  background-size: $sidebar-background-image-width;
+  background-repeat: repeat-y;
+  border-right: 5px solid $sidebar-foreground-color
+}
+
+#sidebar {
+  margin: 1em;
+  margin-left: $sidebar-background-image-width + 5px;
+  text-align: right;
+
+  position: relative;
+  height: 100%;
+
+  font-family: $imprima;
+
+  h1 {
+    font-family: 'Quando', Georgia;
+    font-size: 220%;
+    font-weight: normal;
+    height: $sidebar-heading-height;
+  }
+
+  a {
+    color: $sidebar-foreground-color;
+    text-decoration: none;
+    border: 1px solid $sidebar-background-color;
+    border-radius: 5px;
+    padding: 3px;
+    display: block;
+
+    &:hover {
+      background-color: $sidebar-foreground-color;
+      color: $sidebar-background-color;
+    }
+  }
+}
+
+#save-the-date {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  border-radius: 7px;
+  border: 3px solid #404;
+
+  text-align: center;
+  line-height: 1.1;
+  background-color: #eee;
+  color: #121;
+
+  width: 180px;
+  height: 180px;
+
+  font-size: 40px;
+
+  h2 {
+    font-size: 53%;
+    white-space: nowrap;
+    padding-top: 24px;
+    color: #600;
+  }
+
+  .year {
+    font-size: 160%;
+  }
+}

@@ -4,7 +4,11 @@
 *= require "_vendor/normalize.css"
 *= require "_vendor/html5bp.css"
 
-//Grid
-*= require "_layout/grid"
+*= require "_base/reset"
+
+*= require "_layout/layout"
+
+*= require "_module/sidebar"
+*= require "_module/text-content"
 
 */

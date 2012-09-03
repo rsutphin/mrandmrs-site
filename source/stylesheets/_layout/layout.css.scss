@@ -1,0 +1,29 @@
+$sidebar-width: 340px;
+
+%container {
+  margin: 0; padding: 0;
+}
+
+body {
+  overflow: auto;
+}
+
+#sidebar-container {
+  @extend %container;
+
+  width: $sidebar-width;
+
+  position: fixed;
+  height: 100%;
+}
+
+#content-container {
+  @extend %container;
+
+  margin-left: $sidebar-width;
+}
+
+#content {
+  margin-left: 1em;
+  max-width: 60em;
+}

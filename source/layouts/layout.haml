@@ -8,10 +8,12 @@
   %head
     %meta{:charset => "utf-8"}
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %link{:href => 'http://fonts.googleapis.com/css?family=Quando|Imprima', :rel =>'stylesheet', :type => 'text/css'}
 
     -# To set titles and descriptions globally and for each individual page, see /DOCS.md
     %title= page_title
-    %meta{:content => page_description, :name => "description"}
+    - if page_description
+      %meta{:content => page_description, :name => "description"}
 
     %meta{:content => "width=device-width", :name => "viewport"}
 
@@ -23,9 +25,26 @@
     = javascript_include_tag "vendor/modernizr-2.6.1.min"
     = stylesheet_link_tag "site"
   %body
-    /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
-    %header
-    %div{:role => "main", :class => "main"}= yield
+    #sidebar-container
+      #sidebar
+        %h1 Kelly &amp; Rhett
+        %nav
+          %ul
+            %li
+              %a{:href => 'index.html'} Us
+            %li
+              %a{:href => 'wedding.html'} Wedding
+            %li
+              %a{:href => 'locations.html'} Travel & Maps
+            %li
+              %a{:href => 'chicago.html'} Chicago
+        %aside#save-the-date
+          %h2 Save the Date
+          %span.day May 18
+          %span.year 2013
+    #content-container
+      #content
+        = yield
     %footer
 
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
