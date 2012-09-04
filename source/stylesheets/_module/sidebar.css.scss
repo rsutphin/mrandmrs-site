@@ -42,6 +42,15 @@
       background-color: $sidebar-foreground-color;
       color: $sidebar-background-color;
     }
+
+    &.comingsoon {
+      color: $sidebar-background-color + #333;
+
+      &:hover {
+        color: $sidebar-background-color;
+        background-color: $sidebar-background-color + #333;
+      }
+    }
   }
 }
 
@@ -50,11 +59,11 @@
   bottom: 30px;
   right: 0;
   border-radius: 7px;
-  border: 3px solid #404;
+  border: 3px solid $sidebar-background-color;
 
   text-align: center;
   line-height: 1.1;
-  background-color: #eee;
+  background-color: #fff;
   color: #121;
 
   width: 180px;
