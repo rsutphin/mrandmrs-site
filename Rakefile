@@ -8,5 +8,5 @@ task :clean do
 end
 
 task :deploy => :build do
-  sh 'rsync -av build/* detailedbalance.net:/var/www/mrandmrs-static'
+  sh 'rsync -vlr --del build/ detailedbalance.net:/var/www/mrandmrs-static/'
 end
