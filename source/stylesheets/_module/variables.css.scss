@@ -3,8 +3,8 @@ $sidebar-foreground-color: rgb(192, 192, 192);
 
 $content-foreground-color: #444;
 // $content-link-color: rgb(112, 160, 112);
-$content-link-color: $content-foreground-color + #020;
-$content-link-visited: $content-foreground-color;
+$content-link-color: $content-foreground-color + #141;
+$content-link-visited: $content-link-color + #303;
 $content-link-hover: $content-link-color;
 
 $sidebar-background-image-width: 100px;
