@@ -7,7 +7,7 @@ description: Tools and resources used to build this site.
 
 ## Tools
 
-This site was built with [Middleman][] using [HTML5 Boilerplate][], [HAML][], and
+This site was built with [Middleman][] using [HTML5 Boilerplate][], [Haml][], and
 [Sass][].
 
 [Middleman]: http://middlemanapp.com/
