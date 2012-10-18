@@ -1,4 +1,8 @@
-# Wedding
+---
+title: Wedding
+---
+
+# The Wedding Itself
 
 ## Ceremony and reception
 

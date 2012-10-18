@@ -41,7 +41,7 @@ As an outdoor zoological garden, the [Lincoln Park Zoo][lpzoo] is a great place 
 spend a warm spring day. Best of all, admission is free — see as much or as
 little as you like and come and go as you please.
 
-If you plan on going to the Zoo, note that the <a href="travel.html#hotels-
+If you plan on going to the Zoo, note that the <a href="locations.html#hotels-
 daysinn" class="comingsoon">Days Inn Chicago</a> hotel is a short ride away in a
 cab or the #22 bus.
 
@@ -55,7 +55,7 @@ of independent and foreign first-run releases, plus weekend matinee and midnight
 movie series of classic films.
 
 The Music Box publishes its [showing calendar][mb-comingsoon] seasonally, so
-the schedule for our wedding week should be available by February or so.
+the schedule for our wedding week should be available by late February.
 
 [musicbox]: http://www.musicboxtheatre.com/
 [mb-history]: http://www.musicboxtheatre.com/about/theatre-history
@@ -86,7 +86,7 @@ ants.
 Did you know that Chicago is the home of the first skyscraper? And that it's the
 city where Frank Lloyd Wright got his start?
 
-Get out on the Chicago River and Lake Michigan while learninf about the history
+Get out on the Chicago River and Lake Michigan while learning about the history
 of Chicago’s architecture with an architectural boat tour. Visit the [Chicago
 Architecture Foundation][ch-arch] for more information.
 
