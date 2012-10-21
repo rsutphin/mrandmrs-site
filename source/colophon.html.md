@@ -37,3 +37,13 @@ These fonts are served by the [Google Web Fonts][] API.
 [Quando]: http://www.google.com/webfonts/specimen/Quando
 [Imprima]: http://www.google.com/webfonts/specimen/Imprima
 [Google Web Fonts]: http://www.google.com/webfonts/
+
+## Data
+
+The [maps][] are [OpenStreetMap][osm] data using [Cloudmade][] tiles.
+The CTA train overlay is based on [a dataset from geocommons user Steve Vance][cta-data].
+
+[maps]: locations.html
+[osm]: http://www.openstreetmap.org/
+[Cloudmade]: http://leaflet.cloudmade.com/
+[cta-data]: http://geocommons.com/overlays/96991

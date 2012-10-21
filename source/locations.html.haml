@@ -12,9 +12,9 @@ css: ['http://cdn.leafletjs.com/leaflet-0.4/leaflet.css']
     - data.locations.each do |section|
       %li{:class => section['section'].downcase}
         %h3= section['section']
-        %ul
+        %ul{ 'id' => section['id'] }
           - section['places'].each do |place|
-            %li{'data-geo' => place['geo'].join(',')}
+            %li.place{'data-geo' => place['geo'].join(','), 'id' => place['id']}
               %h4= place['name']
               %p.description
                 Description will go here
