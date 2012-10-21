@@ -4,11 +4,14 @@
 *= require "_vendor/normalize.css"
 *= require "_vendor/html5bp.css"
 
+*= require "_vendor/leaflet.css"
+
 *= require "_base/reset"
 
 *= require "_layout/layout"
 
 *= require "_module/sidebar"
 *= require "_module/text-content"
+*= require "_module/map-content"
 
 */

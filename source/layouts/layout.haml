@@ -23,7 +23,7 @@
 
     = javascript_include_tag "vendor/modernizr-2.6.1.min"
     = stylesheet_link_tag "site"
-  %body
+  %body{:class => data.page.body_class}
     #sidebar-container
       #sidebar
         %h1 Kelly &amp; Rhett
@@ -34,7 +34,7 @@
             %li
               %a{:href => 'wedding.html', :title => 'The plans for our happy day'} Wedding
             %li
-              %a.comingsoon{:href => '#', :title => 'Important locations for your visit'} Travel & Maps
+              %a{:href => 'locations.html', :title => 'Important locations for your visit'} Travel & Maps
             %li
               %a{:href => 'chicago.html', :title => 'Some of our favorite places'} Chicago
             %li
@@ -48,14 +48,16 @@
     #content-container
       #content
         = yield
-        %footer
-          %a{:href => 'colophon.html'}
-            About this site
+        - if !data.page.has_key?('colophon_link') || data.page['colophon_link']
+          %footer
+            %a{:href => 'colophon.html'}
+              About this site
 
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
     :javascript
       window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.0.min.js"><\/script>')
-    = javascript_include_tag "site"
+    - ['site', data.page.js].flatten.compact.each do |script|
+      = javascript_include_tag script
 
     :javascript
       var _gaq=[['_setAccount','UA-34469448-1'],['_trackPageview']];

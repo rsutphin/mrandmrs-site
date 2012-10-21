@@ -1,5 +1,9 @@
 @import '_module/variables';
 
+body {
+  background-color: $content-background-color;
+}
+
 #content {
   padding-top: $sidebar-heading-height;
 

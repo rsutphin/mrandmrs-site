@@ -4,7 +4,7 @@ $sidebar-width: 330px;
   margin: 0; padding: 0;
 }
 
-body {
+html, body {
   height: 100%;
 }
 
@@ -20,7 +20,7 @@ body {
 #content-container {
   @extend %container;
 
-  margin-left: $sidebar-width;
+  margin-left: $sidebar-width + 5px;
 }
 
 #content {

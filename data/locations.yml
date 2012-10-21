@@ -1,0 +1,36 @@
+- section: Wedding
+  places:
+  - name: Ceremony and Reception
+    geo: [41.923332, -87.698256]
+    cta: ["Milwaukee Blue Line"]
+    street: 2323 North Milwaukee Avenue
+    site: wedding.html
+- section: Hotels
+  places:
+  - name: Days Inn Chicago
+    geo: [41.932919, -87.645373]
+    cta: ["Diversey Brown Line", "Fullerton Red Line"]
+    street: 644 West Diversey Parkway
+    site: http://www.daysinnchicago.net/
+  - name: Crowne Plaza Chicago O’Hare
+    geo: [41.976030, -87.862639]
+    cta: ["Rosemont Blue Line"]
+    street: 5440 North River Road
+    city: Rosemont
+    site: http://www.crowneplazaohare.com/
+  - name: Holiday Inn Chicago Downtown
+    geo: [41.874432, -87.639773]
+    cta: ["Clinton Blue Line"]
+    street: 506 West Harrison Street
+    site: http://www.holidayinn.com/hotels/us/en/chicago/chiwh/hoteldetail
+- section: Transportation
+  places:
+  - name: O'Hare Airport
+    geo: [41.9786, -87.9047]
+    cta: ["O'Hare Blue Line"]
+  - name: Midway Airport
+    geo: [41.7861, -87.7525]
+    cta: ["Midway Orange Line"]
+  - name: Chicago Union Station
+    geo: [41.8792, -87.6389]
+    cta: ["Jackson Blue Line"]

@@ -1,0 +1,28 @@
+---
+title: Travel & Maps
+body_class: map
+colophon_link: false
+js: ['vendor/leaflet-0.4.0','locations']
+---
+
+#locations
+  %h2 Important places
+  %ul
+    - data.locations.each do |section|
+      %li{:class => section['section'].downcase}
+        %h3= section['section']
+        %ul
+          - section['places'].each do |place|
+            %li{'data-geo' => place['geo'].join(',')}
+              %h4= place['name']
+              %p.description
+                Description will go here
+              %p.adr
+                %span.street-address= place['street']
+                %span.locality= "#{place['city'] || 'Chicago'},"
+                %span.region Illinois
+              %p.cta
+                = "Nearby CTA train station#{'s' if place['cta'].size != 1}:"
+                = place['cta'].join(', ')
+
+#map
