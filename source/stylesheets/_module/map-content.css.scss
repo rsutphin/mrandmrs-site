@@ -35,7 +35,7 @@ body.map {
     bottom: 36px;
     background-color: $content-background-color;
     z-index: 50;
-    border-radius: 7px;
+    border-radius: 7px 0;
     border: 2px solid $content-foreground-color;
     padding: 0px;
     overflow: scroll;

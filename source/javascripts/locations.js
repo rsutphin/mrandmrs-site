@@ -6,28 +6,35 @@ function Locations() {
     return new L.LatLng(coords[0], coords[1])
   }
 
-  this.sections = _.map($('li.section'), function (elt) {
-    return {
-      elementId: elt.id,
-      sectionId: elt.id.replace(/^section-/, ''),
-      title: $(elt).find('h3').text(),
-      titleDowncase: function () { return this.title.toLowerCase(); },
-      plural: function() {
-        if (this.places.length == 1) {
-          return '';
-        } else {
-          return 's';
-        }
-      },
-      places: _.map($(elt).find('li.place'), function(pElt) {
-        return {
-          elementId: pElt.id,
-          placeId: pElt.id.replace(/^place-/, ''),
-          title: $(pElt).find('h4').text(),
-          latLng: latlngForPlace(pElt)
-        }
-      })
+  this.Section = function (sectionElt) {
+    this.element = sectionElt
+    this.elementId = this.element.id
+    this.sectionId = this.element.id.replace(/^section-/, '')
+    this.title = $(this.element).find('h3').text()
+
+    this.titleDowncase = function () { return this.title.toLowerCase(); }
+
+    this.plural = function () {
+      if (this.places.length == 1) {
+        return '';
+      } else {
+        return 's';
+      }
     }
+
+    this.places = _.map($(this.element).find('li.place'), function (pElt) { return new self.Place(pElt); })
+  }
+
+  this.Place = function (placeElt) {
+    this.element = placeElt
+    this.elementId = placeElt.id
+    this.placeId = placeElt.id.replace(/^place-/, '')
+    this.title = $(placeElt).find('h4').text()
+    this.latLng = latlngForPlace(placeElt)
+  }
+
+  this.sections = _.map($('li.section'), function (elt) {
+    return new self.Section(elt);
   })
 
   this.places = _.chain(this.sections).
@@ -37,7 +44,7 @@ function Locations() {
     return latlngForPlace($('li#ceremony'));
   }
 
-  this.setToDefaultBounds = function() {
+  this.setToDefaultBounds = function () {
     // compute bounding box
     var minBounds = new L.LatLngBounds(initialPoint(), initialPoint());
     _(this.places).each(function(place) {
@@ -63,7 +70,7 @@ function Locations() {
 
   this.setMarkers = function () {
     _.each(this.places, function(place) {
-      var title = $('#' + place.elementId).find('h4').text();
+      var title = $(place.element).find('h4').text();
       L.marker(place.latLng, { title: title }).addTo(self.map);
     })
   }
