@@ -22,20 +22,46 @@ function Locations() {
       }
     }
 
-    this.places = _.map($(this.element).find('li.place'), function (pElt) { return new self.Place(pElt); })
+    var section = this;
+    this.places = _.map($(this.element).find('li.place'),
+      function (pElt) { return new self.Place(pElt, section); })
   }
 
-  this.Place = function (placeElt) {
+  this.Place = function (placeElt, section) {
+    this.section = section
     this.element = placeElt
+
     this.elementId = placeElt.id
     this.placeId = placeElt.id.replace(/^place-/, '')
+
     this.title = $(placeElt).find('h4').text()
     this.latLng = latlngForPlace(placeElt)
+
+    this.markerVisible = true
+
+    this.setMarkerVisible = function (vis) {
+      this.markerVisible = vis;
+      this.displayMarkerAsAppropriate();
+    }
+
+    this.displayMarkerAsAppropriate = function () {
+      if (!this.marker) {
+        this.marker = L.marker(this.latLng, { title: this.title });
+        this.marker.addTo(self.map)
+      }
+
+      this.marker.setOpacity(this.markerVisible ? 1 : 0.1)
+    }
   }
 
   this.sections = _.map($('li.section'), function (elt) {
     return new self.Section(elt);
-  })
+  });
+
+  this.sectionsById = _.reduce(this.sections, function (idx, section) {
+    idx[section.sectionId] = section;
+    return idx;
+  }, {})
 
   this.places = _.chain(this.sections).
     map(function (section) { return section.places }).flatten().value();
@@ -44,10 +70,13 @@ function Locations() {
     return latlngForPlace($('li#ceremony'));
   }
 
-  this.setToDefaultBounds = function () {
+  this.zoomToFitVisibleMarkers = function () {
     // compute bounding box
-    var minBounds = new L.LatLngBounds(initialPoint(), initialPoint());
-    _(this.places).each(function(place) {
+    var visibleMarkers = _.filter(this.places, function (place) { return place.markerVisible; })
+    if (visibleMarkers.length == 0) { return; }
+
+    var minBounds = new L.LatLngBounds(visibleMarkers[0].latLng, visibleMarkers[0].latLng);
+    _.each(visibleMarkers, function(place) {
       minBounds.extend(place.latLng)
     });
     console.log("Computed location bounds", minBounds.toBBoxString())
@@ -70,8 +99,7 @@ function Locations() {
 
   this.setMarkers = function () {
     _.each(this.places, function(place) {
-      var title = $(place.element).find('h4').text();
-      L.marker(place.latLng, { title: title }).addTo(self.map);
+      place.displayMarkerAsAppropriate();
     })
   }
 
@@ -92,17 +120,30 @@ function Locations() {
       return false;
     });
 
-
     _.each($('#locations h3'), function(sectionHeading) {
       var sectionElement = $(sectionHeading).closest('li.section')[0]
       var section = _.find(self.sections, function(s) { return s.elementId == sectionElement.id; })
 
-      // $(sectionHeading).after(
-      //   Mustache.render(
-      //     "<p><label class='show_section'><input id='show_section-{{id}}' type='checkbox'> Show the {{titleDowncase}} location{{plural}} on the map</label></p>",
-      //     section
-      //   )
-      // )
+      $(sectionHeading).after(
+        Mustache.render(
+          "<p>"
+          + "<label class='show_section'>"
+          + "&nbsp;<input id='show_section-{{sectionId}}' data-section='{{sectionId}}' class='show_section' type='checkbox' checked='checked'> "
+          + "<span class='text'>Show the {{titleDowncase}} location{{plural}} on the map</span>"
+          + "</label>"
+          + "</p>",
+          section
+        )
+      )
+    })
+
+    $('input.show_section').change(function () {
+      _.each($('input.show_section'), function (showInput) {
+        var section = self.sectionsById[$(showInput).attr('data-section')]
+        _.each(section.places, function (place) {
+          place.setMarkerVisible(showInput.checked);
+        })
+      });
     })
   }
 
@@ -120,10 +161,10 @@ function Locations() {
 }
 
 (function() {
-  var locations = new Locations();
+  window.locations = new Locations();
   console.log(locations);
   locations.setMarkers();
-  locations.setToDefaultBounds();
+  locations.zoomToFitVisibleMarkers();
   locations.createSectionControls();
   locations.selectSection('wedding');
 }())
