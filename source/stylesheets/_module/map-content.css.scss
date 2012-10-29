@@ -29,7 +29,7 @@ body.map {
 
   #locations {
     position: absolute;
-    width: 240px;
+    width: 270px;
     right: 36px;
     top: 36px;
     bottom: 36px;
@@ -37,10 +37,52 @@ body.map {
     z-index: 50;
     border-radius: 7px;
     border: 2px solid $content-foreground-color;
-    padding: 7px;
+    padding: 0px;
     overflow: scroll;
 
-    h2 { margin-top: 0; }
+    h2 { margin-top: 7px; }
+
+    & > h2, & > h3, h4, p {
+      padding: 0 7px;
+    }
+
+    h4 {
+      border-top: 1px solid $sidebar-background-color;
+      background-color: $sidebar-foreground-color + #222;
+    }
+
+    ul#section_tabs {
+      margin: 7px;
+      width: 270px - 14px;
+      overflow: auto;
+    }
+
+    li.section_tab {
+      float: left;
+      margin: 1px;
+      width: (270px - 14px - 4px) / 2;
+      font-family: $imprima;
+
+      a {
+        display: block;
+        padding: 3px;
+        border-radius: 5px 0;
+
+        border: 1px solid $sidebar-background-color;
+        background-color: $sidebar-background-color;
+        color: $sidebar-foreground-color;
+
+        &:hover, &.selected {
+          background-color: $content-background-color - #111;
+          color: $content-foreground-color;
+          border-width: 1px;
+        }
+
+        &.selected {
+          background-color: $content-background-color;
+        }
+      }
+    }
   }
 
   ul { margin: 0; padding: 0; }

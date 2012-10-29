@@ -1,8 +1,10 @@
 - section: Wedding
   id: wedding
   places:
-  - name: Ceremony and Reception
+  - name: Revolution Brewing
     id: ceremony
+    description:
+      The [wedding ceremony and the reception](wedding.html) will be held here.
     geo: [41.923332, -87.698256]
     cta: ["Milwaukee Blue Line"]
     street: 2323 North Milwaukee Avenue

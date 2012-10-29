@@ -8,16 +8,15 @@ css: ['http://cdn.leafletjs.com/leaflet-0.4/leaflet.css']
 
 #locations
   %h2 Important places
-  %ul
+  %ul#sections
     - data.locations.each do |section|
-      %li{:class => section['section'].downcase}
+      %li{:id => "section-#{section['id']}", :class => 'section'}
         %h3= section['section']
         %ul{ 'id' => section['id'] }
           - section['places'].each do |place|
             %li.place{'data-geo' => place['geo'].join(','), 'id' => place['id']}
               %h4= place['name']
-              %p.description
-                Description will go here
+              .description=markdown_or(place['description'], 'Missing description')
               %p.adr
                 %span.street-address= place['street']
                 %span.locality= "#{place['city'] || 'Chicago'},"
