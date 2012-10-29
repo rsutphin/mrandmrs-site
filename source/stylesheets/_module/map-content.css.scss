@@ -83,6 +83,41 @@ body.map {
         }
       }
     }
+
+    label.show_section {
+      display: block;
+      overflow: auto;
+      width: 100%;
+
+      input, span.text {
+        display: block;
+        float: left;
+      }
+
+      input {
+        width: 8%;
+        padding-top: 5px;
+      }
+
+      span.text {
+        width: 80%;
+      }
+    }
+
+    p.adr, p.cta {
+      font-size: 95%;
+      padding-left: 14px;
+    }
+
+    p.cta {
+      text-indent: -7px;
+    }
+
+    p.adr {
+      span.street-address {
+        display: block
+      }
+    }
   }
 
   ul { margin: 0; padding: 0; }

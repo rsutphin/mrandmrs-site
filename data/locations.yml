@@ -4,13 +4,20 @@
   - name: Revolution Brewing
     id: ceremony
     description:
-      The [wedding ceremony and the reception](wedding.html) will be held here.
+      The [wedding ceremony and reception](wedding.html) will be held
+      at Revolution Brewing in Logan Square.
     geo: [41.923332, -87.698256]
     cta: ["Milwaukee Blue Line"]
     street: 2323 North Milwaukee Avenue
     site: wedding.html
 - section: Hotels
   id: hotels
+  overview:
+    For reservation details, check out [the hotels page](hotels.html).
+    <p>
+    If you're planning to come, we recommend that you get your reservation as
+    soon as possible — there's a big convention in town the same weekend as
+    our wedding.
   places:
   - name: Days Inn Chicago
     id: daysinn

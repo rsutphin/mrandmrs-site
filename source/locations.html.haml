@@ -11,18 +11,21 @@ css: ['http://cdn.leafletjs.com/leaflet-0.4/leaflet.css']
   %ul#sections
     - data.locations.each do |section|
       %li{:id => "section-#{section['id']}", :class => 'section'}
+        - if section['overview']
+          .overview= markdown_or(section['overview'])
         %h3= section['section']
         %ul{ 'id' => section['id'] }
           - section['places'].each do |place|
             %li.place{'data-geo' => place['geo'].join(','), 'id' => place['id']}
               %h4= place['name']
-              .description=markdown_or(place['description'], 'Missing description')
-              %p.adr
-                %span.street-address= place['street']
-                %span.locality= "#{place['city'] || 'Chicago'},"
-                %span.region Illinois
+              .description= markdown_or(place['description'], 'Missing description')
+              - if place['street']
+                %p.adr
+                  %span.street-address= place['street']
+                  %span.locality= "#{place['city'] || 'Chicago'},"
+                  %span.region Illinois
               %p.cta
-                = "Nearby CTA train station#{'s' if place['cta'].size != 1}:"
+                = "CTA station#{'s' if place['cta'].size != 1}:"
                 = place['cta'].join(', ')
 
 #map
