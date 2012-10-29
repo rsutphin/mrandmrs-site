@@ -53,3 +53,31 @@
     id: unionstation
     geo: [41.8792, -87.6389]
     cta: ["Jackson Blue Line"]
+- section: Attractions
+  id: attractions
+  overview:
+    For more about all these places, check out [our Chicago page](chicago.html).
+  places:
+  - name: Museum Campus
+    id: museumcampus
+    geo: [41.86647, -87.61403]
+    cta: ["Roosevelt Red Line"]
+  - name: Chicago History Museum
+    id: chicagohistory
+    geo: [41.911949, -87.631770]
+    street: 1601 North Clark Street
+  - name: Lincoln Park Zoo
+    id: zoo
+    geo: [41.92033, -87.633387]
+    street: 2001 North Clark Street
+  - name: Music Box Theatre
+    id: musicbox
+    geo: [41.94983, -87.663945]
+    street: 3733 North Southport Avenue
+  - name: John Hancock Building
+    id: Hancock
+    geo: [41.898859, -87.623711]
+    street: 875 North Michigan Avenue
+  - name: Architectural Boat Tour
+    id: boattour
+    geo: [41.888402, -87.623899]

@@ -24,8 +24,9 @@ css: ['http://cdn.leafletjs.com/leaflet-0.4/leaflet.css']
                   %span.street-address= place['street']
                   %span.locality= "#{place['city'] || 'Chicago'},"
                   %span.region Illinois
-              %p.cta
-                = "CTA station#{'s' if place['cta'].size != 1}:"
-                = place['cta'].join(', ')
+              - if place['cta']
+                %p.cta
+                  = "CTA station#{'s' if place['cta'].size != 1}:"
+                  = place['cta'].join(', ')
 
 #map
