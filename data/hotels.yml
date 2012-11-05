@@ -30,6 +30,9 @@
     <p>
     The Days Inn Chicago offers a free continental breakfast. It charges $24/day
     for valet parking with in/out privileges.
+  short_description:
+    Located in the heart of Chicago’s Lincoln Park neighborhood, the Days Inn
+    Chicago offers a great jumping off point for exploration of the city.
 
 - name: Crowne Plaza Chicago O’Hare
   id: crowneplaza
@@ -63,6 +66,9 @@
     attractions.
     <p>
     The Crowne Plaza provides first-come, first-served parking for $5/day.
+  short_description:
+    Convenient to Chicago’s main airport, the Crowne Plaza Chicago O’Hare makes
+    it easy to get into Chicago, to the wedding, and back out again.
 
 - name: Holiday Inn Chicago Downtown
   id: holidayinn
@@ -90,3 +96,8 @@
     Amtrak hub.
     <p>
     The Holiday Inn offers valet parking for $35/day.
+  short_description:
+    Just west of the loop, the Holiday Inn Chicago Downtown is convenient to
+    nearly every CTA train line, including the Blue Line (to get to the
+    [wedding](wedding.html)) and the Orange Line (useful if you fly into
+    Midway).

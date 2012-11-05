@@ -18,26 +18,6 @@
     If you're planning to come, we recommend that you get your reservation as
     soon as possible — there's a big convention in town the same weekend as
     our wedding.
-  places:
-  - name: Days Inn Chicago
-    id: daysinn
-    geo: [41.932919, -87.645373]
-    cta: ["Diversey Brown Line", "Fullerton Red Line"]
-    street: 644 West Diversey Parkway
-    site: http://www.daysinnchicago.net/
-  - name: Crowne Plaza Chicago O’Hare
-    id: crowneplaza
-    geo: [41.976030, -87.862639]
-    cta: ["Rosemont Blue Line"]
-    street: 5440 North River Road
-    city: Rosemont
-    site: http://www.crowneplazaohare.com/
-  - name: Holiday Inn Chicago Downtown
-    id: holidayinn
-    geo: [41.874432, -87.639773]
-    cta: ["Clinton Blue Line"]
-    street: 506 West Harrison Street
-    site: http://www.holidayinn.com/hotels/us/en/chicago/chiwh/hoteldetail
 - section: Transportation
   id: transportation
   places:

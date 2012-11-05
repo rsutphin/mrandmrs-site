@@ -15,10 +15,10 @@ css: ['http://cdn.leafletjs.com/leaflet-0.4/leaflet.css']
           .overview= markdown_or(section['overview'])
         %h3= section['section']
         %ul{ 'id' => section['id'] }
-          - section['places'].each do |place|
+          - (section['places'] || data.send(section['id']) || []).each do |place|
             %li.place{'data-geo' => place['geo'].join(','), 'id' => place['id']}
               %h4= place['name']
-              .description= markdown_or(place['description'], 'Missing description')
+              .description= markdown_or(place['short_description'] || place['description'], 'Missing description')
               - if place['street']
                 %p.adr
                   %span.street-address= place['street']
