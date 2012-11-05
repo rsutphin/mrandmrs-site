@@ -27,16 +27,25 @@
     geo: [41.9786, -87.9047]
     cta: ["O'Hare Blue Line"]
     icon: airport.png
+    description:
+      The second-biggest airport in the U.S., O’Hare has flights from all major
+      airlines.
   - name: Midway Airport
     id: midway
     geo: [41.7861, -87.7525]
     cta: ["Midway Orange Line"]
     icon: airport.png
+    description:
+      The second city’s second airport, Midway is Chicago’s home for discount
+      airlines, including Southwest.
   - name: Chicago Union Station
     id: unionstation
     geo: [41.8792, -87.6389]
     cta: ["Jackson Blue Line"]
     icon: train.png
+    description:
+      Just west of downtown, Union Station is the destination for Amtrak in
+      Chicago.
 - section: Attractions
   id: attractions
   detail_page: chicago.html
