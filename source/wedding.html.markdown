@@ -16,8 +16,8 @@ There is limited metered street parking in the neighborhood around Revolution,
 but who wants to worry about feeding the meter? (Or driving home from a
 brewery?) Revolution is an easy walk (500 feet) from the California stop on the
 CTA blue line — easily accessible from either downtown or O'Hare airport. For
-the public transit-skeptical, cabs are widely available in Chicago. See the <a
-href="locations.html" class="comingsoon">Travel</a> page for more info.
+the public transit-skeptical, cabs are widely available in Chicago. See the
+[Travel](locations.html) page for more info.
 
 ## Wedding party
 
