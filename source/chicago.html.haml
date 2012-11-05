@@ -1,0 +1,14 @@
+---
+title: Visiting Chicago
+description: There are lots of amazing things to do and see in Chicago.  These are some of our favorites.
+---
+
+%h1 Visiting Chicago
+
+%p
+  There are lots of amazing things to do and see in Chicago.  These are some of
+  our favorites.
+
+- data.attractions.each do |attraction|
+  %h2= attraction['name']
+  =markdown_or(attraction['description'])
