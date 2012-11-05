@@ -46,7 +46,6 @@ the [Map Icons Collection][mapicons] by Nicolas Mollet.
 ## Data
 
 The [maps][] are [OpenStreetMap][osm] data using [Cloudmade][] tiles.
-The CTA train overlay is based on [a dataset from geocommons user Steve Vance][cta-data].
 
 [maps]: locations.html
 [osm]: http://www.openstreetmap.org/
