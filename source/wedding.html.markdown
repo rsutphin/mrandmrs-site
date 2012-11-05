@@ -23,7 +23,7 @@ the public transit-skeptical, cabs are widely available in Chicago. See the
 
 * Amy E. Borden - Matron of Honor, sister of the bride
 * J. Grant Sutphin - Best Man, brother of the groom
-* Amanda Pilcher - sister of the groom
+* Amanda K. Pilcher - sister of the groom
 * Angela Halaby - friend of the bride
 * John P. Davis - friend of the groom
 
