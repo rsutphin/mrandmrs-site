@@ -38,6 +38,11 @@ These fonts are served by the [Google Web Fonts][] API.
 [Imprima]: http://www.google.com/webfonts/specimen/Imprima
 [Google Web Fonts]: http://www.google.com/webfonts/
 
+The markers used on [the map](locations.html) are from
+the [Map Icons Collection][mapicons] by Nicolas Mollet.
+
+[mapicons]: http://mapicons.nicolasmollet.com/
+
 ## Data
 
 The [maps][] are [OpenStreetMap][osm] data using [Cloudmade][] tiles.
