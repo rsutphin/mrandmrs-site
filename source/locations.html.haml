@@ -16,7 +16,7 @@ css: ['http://cdn.leafletjs.com/leaflet-0.4/leaflet.css']
         %h3= section['section']
         %ul{ 'id' => section['id'] }
           - (section['places'] || data.send(section['id']) || []).each do |place|
-            %li.place{'data-geo' => place['geo'].join(','), 'id' => place['id']}
+            %li.place{'data-geo' => place['geo'].join(','), 'id' => place['id'], 'data-icon' => place['icon'] || "#{section['id']}.png"}
               %h4= place['name']
               .description= markdown_or(place['short_description'] || place['description'], 'Missing description')
               - if place['street']

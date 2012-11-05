@@ -33,6 +33,7 @@ function Locations() {
 
     this.elementId = placeElt.id
     this.placeId = placeElt.id.replace(/^place-/, '')
+    this.iconUrl = $(placeElt).attr('data-icon')
 
     this.title = $(placeElt).find('h4').text()
     this.latLng = latlngForPlace(placeElt)
@@ -46,7 +47,14 @@ function Locations() {
 
     this.displayMarkerAsAppropriate = function () {
       if (!this.marker) {
-        this.marker = L.marker(this.latLng, { title: this.title });
+        this.marker = L.marker(this.latLng, {
+          title: this.title,
+          icon: L.icon({
+            iconUrl: "images/markers/" + this.iconUrl,
+            iconSize: [32, 37],
+            iconAnchor: [16, 36]
+          })
+        });
         this.marker.addTo(self.map)
       }
 

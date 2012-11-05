@@ -38,7 +38,8 @@ body.map {
     border-radius: 7px 0;
     border: 2px solid $content-foreground-color;
     padding: 0px;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     h2 { margin-top: 7px; }
 

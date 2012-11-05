@@ -25,14 +25,17 @@
     id: ohare
     geo: [41.9786, -87.9047]
     cta: ["O'Hare Blue Line"]
+    icon: airport.png
   - name: Midway Airport
     id: midway
     geo: [41.7861, -87.7525]
     cta: ["Midway Orange Line"]
+    icon: airport.png
   - name: Chicago Union Station
     id: unionstation
     geo: [41.8792, -87.6389]
     cta: ["Jackson Blue Line"]
+    icon: train.png
 - section: Attractions
   id: attractions
   overview:
