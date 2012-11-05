@@ -12,9 +12,9 @@
     site: wedding.html
 - section: Hotels
   id: hotels
-  overview:
+  overview: |
     For reservation details, check out [the hotels page](hotels.html).
-    <p>
+
     If you're planning to come, we recommend that you get your reservation as
     soon as possible — there's a big convention in town the same weekend as
     our wedding.
