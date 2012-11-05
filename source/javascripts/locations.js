@@ -36,6 +36,12 @@ function Locations() {
     this.iconUrl = $(placeElt).attr('data-icon')
 
     this.title = $(placeElt).find('h4').text()
+    this.descriptionHtml = $(placeElt).find('.description').html()
+    console.log(this.descriptionHtml)
+    this.popupContent = Mustache.render(
+      "<h3>{{section.title}}: {{title}}</h3>" +
+      "{{&descriptionHtml}}", this
+    )
     this.latLng = latlngForPlace(placeElt)
 
     this.markerVisible = true
@@ -52,9 +58,11 @@ function Locations() {
           icon: L.icon({
             iconUrl: "images/markers/" + this.iconUrl,
             iconSize: [32, 37],
-            iconAnchor: [16, 36]
+            iconAnchor: [16, 36],
+            popupAnchor: [0, -36]
           })
         });
+        this.marker.bindPopup(this.popupContent)
         this.marker.addTo(self.map)
       }
 
