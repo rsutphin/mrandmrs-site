@@ -1,5 +1,6 @@
-module SiteHelpers
+require 'date'
 
+module SiteHelpers
   def page_title
     [
       'Kelly & Rhett',
@@ -20,5 +21,12 @@ module SiteHelpers
 
   def markdown_renderer
     @markdown_renderer ||= ::Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+  end
+
+  def full_date(date_str)
+    puts "date_str: #{date_str.inspect}"
+    date = Date.parse(date_str)
+    puts "date: #{date.inspect}"
+    date.strftime('%A, %B %-d')
   end
 end

@@ -1,0 +1,92 @@
+- name: Days Inn Chicago
+  id: daysinn
+  geo: [41.932919, -87.645373]
+  cta: ["Diversey Brown Line", "Fullerton Red Line"]
+  street: 644 West Diversey Parkway
+  site: http://www.daysinnchicago.net/
+  block:
+    nights:
+      - '2013-05-17'
+      - '2013-05-18'
+      - '2013-05-19'
+    min: 2
+    options:
+      - desc: One King
+        rate: 172.80
+      - desc: Two Queen Beds
+        rate: 181.80
+    deadline: '2013-04-17'
+    howto:
+      Call 1-888-LPN-DAYS and quote group code BOSU.
+  headline: In the Middle of It All
+  description:
+    Located in the heart of Chicago’s Lincoln Park neighborhood, the Days Inn
+    Chicago offers a great jumping off point for exploration of the city. It’s
+    near the Lincoln Park Zoo and Lake Michigan and has easy access (via the
+    Red Line) to the Magnificent Mile, downtown, and Museum Campus.
+    <p>
+    As the crow flies, it’s the closest to the [wedding location](wedding.html)
+    (though the others have more direct public transit access).
+    <p>
+    The Days Inn Chicago offers a free continental breakfast. It charges $24/day
+    for valet parking with in/out privileges.
+
+- name: Crowne Plaza Chicago O’Hare
+  id: crowneplaza
+  geo: [41.976030, -87.862639]
+  cta: ["Rosemont Blue Line"]
+  street: 5440 North River Road
+  city: Rosemont
+  site: http://www.crowneplazaohare.com/
+  block:
+    nights: ['2013-05-17', '2013-05-18']
+    min: 2
+    options:
+      - desc: King plus Sofa Bed
+        rate: 109.00
+      - desc: Two Queen Beds
+        rate: 109.00
+    howto:
+      Go to [the hotel’s site](http://www.ichotelsgroup.com/crowneplaza/hotels/us/en/rosemont/chiok/hoteldetail?groupCode=WE7)
+      and use group code `WE7`. Or you can call 1-877-337-5793 and mention the
+      Borden-Sutphin wedding.
+    deadline: '2013-04-17'
+  headline: Convenient to O'Hare and the Blue Line
+  description:
+    Convenient to Chicago’s main airport, the Crowne Plaza Chicago O’Hare makes
+    it easy to get into Chicago, to the wedding, and back out again. The hotel
+    provides a complimentary shuttle to and from the airport.
+    <p>
+    The Crowne Plaza is also under a half mile from the Rosemont stop on the CTA
+    Blue Line. The Blue Line gives easy access to [Revolution](wedding.html) for
+    the wedding and continues on to the downtown core for access to other
+    attractions.
+    <p>
+    The Crowne Plaza provides first-come, first-served parking for $5/day.
+
+- name: Holiday Inn Chicago Downtown
+  id: holidayinn
+  geo: [41.874432, -87.639773]
+  cta: ["Clinton Blue Line"]
+  street: 506 West Harrison Street
+  site: http://www.holidayinn.com/hotels/us/en/chicago/chiwh/hoteldetail
+  block:
+    nights: ['2013-05-17', '2013-05-18']
+    min: 2
+    options:
+      - desc: King Bed
+        rate: 199
+      - desc: Two Double Beds
+        rate: 199
+    howto:
+      Call 312-957-9100 and mention the Borden-Sutphin wedding.
+    deadline: '2013-05-03'
+  headline: Downtown Near the River
+  description:
+    Just west of the loop, the Holiday Inn Chicago Downtown is convenient to
+    nearly every CTA train line, including the Blue Line (to get to the
+    [wedding](wedding.html)) and the Orange Line (useful if you fly into
+    Midway). It’s also walking distance from Chicago Union Station, the city’s
+    Amtrak hub.
+    <p>
+    The Holiday Inn offers valet parking for $35/day.

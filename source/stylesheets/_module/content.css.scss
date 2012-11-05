@@ -1,0 +1,49 @@
+@import '_module/variables';
+
+p.adr {
+  span.street-address {
+    display: block
+  }
+}
+
+ul#hotels {
+  margin: 0;
+  padding: 0;
+
+  & > li {
+    list-style-type: none;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  table.block-details {
+    width: 80%;
+    margin: 1em 10%;
+
+    th, td {
+      border: 1px solid $content-foreground-color;
+      border-spacing: collapse;
+
+      vertical-align: top;
+      padding: 0.5em;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    th {
+      text-align: right;
+      width: 20%;
+    }
+
+    .inner-heading {
+      text-align: center;
+      color: $content-background-color;
+      background-color: $content-foreground-color;
+      font-size: 80%;
+    }
+  }
+}

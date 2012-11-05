@@ -1,0 +1,92 @@
+---
+title: Hotels
+---
+
+%h1 Places to Stay
+
+As you'd expect of the third-largest city in the US, Chicago offers many places
+for its guests to stay. As you'd expect of a wedding, we've reserved spots at
+several hotels. If you'd like a different experience, there are several
+suggestions at the end of the page.
+
+In any case, please make your accommodation arrangements as soon as you're sure
+you'll be joining us. There are two major conventions in town the same weekend
+as the wedding and we want to make sure everyone who's otherwise able is there
+to help us celebrate our happy day.
+
+%h2 Room Blocks
+
+%p
+  We have reserved blocks of rooms at three area hotels. They are located in
+  different parts of the city — pick the area that fits how you're planning to
+  visit.
+
+%ul#hotels
+  - data.hotels.each do |hotel|
+    %li.hotel{'data-geo' => hotel['geo'].join(','), 'id' => hotel['id']}
+      %h3
+        .sub= hotel['headline']
+        = hotel['name']
+      .description= markdown_or(hotel['description'], 'Missing description')
+      %table.block-details
+        %tr
+          %th Address
+          %td
+            - if hotel['street']
+              %p.adr
+                %span.street-address= hotel['street']
+                %span.locality= "#{hotel['city'] || 'Chicago'},"
+                %span.region Illinois
+        - if hotel['cta']
+          %tr
+            %th= "Nearby CTA station#{'s' if hotel['cta'].size != 1}"
+            %td
+              %p.cta
+                = hotel['cta'].join(', ')
+        %tr
+          %th Website
+          %td
+            %a{:href => hotel['site']}= hotel[:site]
+        %tr
+          %th.inner-heading{'colspan' => 2}
+            %h4 Block details
+        - if hotel['block']
+          %tr
+            %th Nights available
+            %td
+              %ul
+                - hotel['block']['nights'].each do |date|
+                  %li= full_date(date)
+          %tr
+            %th Minimum
+            %td
+              = hotel['block']['min']
+              nights
+          %tr
+            %th Room and rate options
+            %td
+              %ul
+                - hotel['block']['options'].each do |opt|
+                  %li= "#{opt['desc']}: $%.2f" % opt['rate']
+          %tr
+            %th To reserve
+            %td= markdown_or(hotel['block']['howto'])
+          %tr
+            %th Must reserve by
+            %td= full_date(hotel['block']['deadline'])
+
+%h2 Other Places to Consider
+
+:markdown
+  To get a feel for one of Chicago’s neighborhoods, why not stay at one of the
+  city’s many bed and breakfasts? Choices in Logan Square, Wicker Park, and
+  Bucktown will put you a stone’s throw from Revolution Brewing. The
+  [Chicago Bed & Breakfast Association](http://www.chicago-bed-breakfast.com/)
+  has a list of places to consider.
+
+  The more adventurous may consider [airbnb](http://airbnb.com/chicago). This
+  new peer-to-peer listing service lets folks offer their spare rooms or entire
+  homes for short-term rentals. It has many places for let in Chicago.
+
+  And of course, there's always [TripAdvisor](www.tripadvisor.com/Hotels-g35805-Chicago_Illinois-Hotels.html).
+
