@@ -5,6 +5,8 @@ description: Tools and resources used to build this site.
 
 # Colophon
 
+This site was built entirely with open source tools, content, and data.
+
 ## Tools
 
 This site was built with [Middleman][] using [HTML5 Boilerplate][], [Haml][], and
