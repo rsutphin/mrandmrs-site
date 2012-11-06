@@ -22,7 +22,7 @@
 - section: Transportation
   id: transportation
   places:
-  - name: O'Hare Airport
+  - name: O'Hare Airport (ORD)
     id: ohare
     geo: [41.9786, -87.9047]
     cta: ["O'Hare Blue Line"]
@@ -30,15 +30,15 @@
     description:
       The second-biggest airport in the U.S., O’Hare has flights from all major
       airlines.
-  - name: Midway Airport
+  - name: Midway Airport (MDW)
     id: midway
     geo: [41.7861, -87.7525]
     cta: ["Midway Orange Line"]
     icon: airport.png
     description:
-      The second city’s second airport, Midway is Chicago’s home for discount
+      The Second City’s second airport, Midway is Chicago’s home for discount
       airlines, including Southwest.
-  - name: Chicago Union Station
+  - name: Chicago Union Station (CHI)
     id: unionstation
     geo: [41.8792, -87.6389]
     cta: ["Jackson Blue Line"]
