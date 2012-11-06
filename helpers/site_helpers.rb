@@ -24,9 +24,7 @@ module SiteHelpers
   end
 
   def full_date(date_str)
-    puts "date_str: #{date_str.inspect}"
-    date = Date.parse(date_str)
-    puts "date: #{date.inspect}"
-    date.strftime('%A, %B %-d')
+    date = Date.parse(date_str) if date_str
+    date.strftime('%A, %B %-d') if date
   end
 end
