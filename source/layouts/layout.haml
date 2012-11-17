@@ -50,6 +50,8 @@
           %span.year 2013
     #content-container
       #content
+        - if data.page.has_key?('photo')
+          %img.photo{ :src => "/images/#{data.page['photo']['src']}", :width => 400 }
         = yield
         - if !data.page.has_key?('colophon_link') || data.page['colophon_link']
           %footer

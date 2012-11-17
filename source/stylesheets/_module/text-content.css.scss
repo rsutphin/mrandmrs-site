@@ -42,12 +42,12 @@ body {
   img {
     display: block;
     float: right;
-    border: 2px solid $content-foreground-color;
-    margin: 0 1em 1em 1em
+    border: 5px solid $sidebar-foreground-color;
+    margin: 0.5em 1em 1em 1em
   }
 
   footer {
-    padding-top: 1em;
+    padding: 1em;
     text-align: center;
     border-top: 1px dotted $content-foreground-color + #777;
     font-size: 70%;

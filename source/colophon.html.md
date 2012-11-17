@@ -1,11 +1,15 @@
 ---
 title: Colophon
 description: Tools and resources used to build this site.
+photo:
+  src: 'kr-by-victoria-sprung-131-goofy.jpg'
+  alt: 'Kelly and Rhett.'
+  title: 'Kelly and Rhett watch the Middleman build this site.'
 ---
 
 # Colophon
 
-This site was built entirely with open source tools, content, and data.
+This site was built with open source tools, resources, and data.
 
 ## Tools
 
@@ -53,3 +57,10 @@ The [maps][] are [OpenStreetMap][osm] data using [Cloudmade][] tiles.
 [osm]: http://www.openstreetmap.org/
 [Cloudmade]: http://leaflet.cloudmade.com/
 [cta-data]: http://geocommons.com/overlays/96991
+
+## Photos
+
+Professional photos by [Victoria Sprung][sprung]. All rights reserved (on the
+photos).
+
+[sprung]: http://sprungphoto.com/

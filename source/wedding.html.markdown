@@ -1,5 +1,8 @@
 ---
 title: Wedding
+photo:
+  src: 'kr-by-victoria-sprung-88-bw-stage-lights.jpg'
+  alt: 'Kelly and Rhett.'
 ---
 
 # The Wedding Itself
