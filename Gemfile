@@ -5,3 +5,4 @@ gem "middleman-livereload", "~>3.0.0", :git => "git://github.com/middleman/middl
 gem "redcarpet"
 
 gem 'jsmin'
+gem 'rake'
