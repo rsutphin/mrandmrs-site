@@ -24,7 +24,7 @@ See the [Travel](locations.html) page for more info.
 
 ## Wedding party
 
-* Amy E. Borden - Matron of Honor, sister of the bride
+* Amy E. Borden - Maid of Honor, sister of the bride
 * J. Grant Sutphin - Best Man, brother of the groom
 * Amanda K. Pilcher - sister of the groom
 * Angela Halaby - friend of the bride
