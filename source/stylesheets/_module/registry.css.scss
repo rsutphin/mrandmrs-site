@@ -1,0 +1,36 @@
+@import '_module/variables';
+
+$registry-image-h-margin: 15px;
+$registry-li-width: 350px + 2 * $registry-image-h-margin;
+$registry-li-height: 160px;
+
+ul#registries {
+  padding: 0;
+  margin: 0 auto;
+
+  li {
+    list-style-type: none;
+    width: $registry-li-width;
+    height: $registry-li-height;
+    line-height: $registry-li-height;
+    display: block;
+    margin: 1em;
+    padding: 0;
+
+    border: 2px solid $sidebar-foreground-color;
+    &:hover {
+      border-color: $content-link-hover;
+    }
+  }
+
+  img {
+    border: 0;
+    float: none;
+    margin: 0 $registry-image-h-margin;
+    display: inline;
+  }
+
+  a, a:hover {
+    border: none;
+  }
+}

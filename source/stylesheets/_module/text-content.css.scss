@@ -53,6 +53,8 @@ body {
     font-size: 70%;
     font-family: $imprima;
 
+    clear: both;
+
     a {
       border-width: 0;
       color: $content-foreground-color + #777;
