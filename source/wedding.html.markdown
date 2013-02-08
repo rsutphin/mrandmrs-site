@@ -9,9 +9,10 @@ photo:
 
 ## Ceremony and reception
 
-Our wedding (both ceremony and reception) will be at [Revolution
-Brewing][revbrew] in Chicago, Illinois on Saturday, May 18, 2013 from the early
-evening till late. More details will be available closer to the date.
+Our wedding will be at [Revolution Brewing][revbrew] in Chicago, Illinois on
+Saturday, May 18, 2013 in the afternoon and evening. The ceremony will begin
+promptly at 4:30pm with drinks, dinner, and dancing to follow at the same
+location.
 
 [revbrew]: http://revbrew.com/brewpub
 
@@ -21,6 +22,8 @@ brewery?) Revolution is an easy walk (500 feet) from the California stop on the
 CTA Blue Line — easily accessible from either downtown Chicago or O'Hare
 airport. For the public transit-skeptical, cabs are widely available in Chicago.
 See the [Travel](locations.html) page for more info.
+
+Requested attire is semi-formal.
 
 ## Wedding party
 
