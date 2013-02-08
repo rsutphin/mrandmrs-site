@@ -10,6 +10,9 @@ ul#registries {
 
   li {
     list-style-type: none;
+  }
+
+  a {
     width: $registry-li-width;
     height: $registry-li-height;
     line-height: $registry-li-height;
@@ -17,7 +20,10 @@ ul#registries {
     margin: 1em;
     padding: 0;
 
-    border: 2px solid $sidebar-foreground-color;
+    &, &:visited {
+      border: 2px solid $sidebar-foreground-color;
+    }
+
     &:hover {
       border-color: $content-link-hover;
     }
@@ -28,9 +34,5 @@ ul#registries {
     float: none;
     margin: 0 $registry-image-h-margin;
     display: inline;
-  }
-
-  a, a:hover {
-    border: none;
   }
 }
