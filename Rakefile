@@ -13,5 +13,5 @@ end
 
 task :compile_js_templates do
   templates = Dir['source/javascripts/handlebars-templates/*.handlebars']
-  sh "handlebars '#{templates.join("' '")}' -f source/javascripts/compiled_templates.js"
+  sh "handlebars '#{templates.join("' '")}' -f source/javascripts/compiled_templates.js -o"
 end
