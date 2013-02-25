@@ -3,3 +3,5 @@
 .sass-cache
 .scssc
 build
+
+source/javascripts/compiled_templates.js

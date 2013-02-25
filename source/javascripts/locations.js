@@ -38,10 +38,7 @@ function Locations() {
     this.title = $(placeElt).find('h4').text()
     this.descriptionHtml = $(placeElt).find('.description').html()
     console.log(this.descriptionHtml)
-    this.popupContent = Mustache.render(
-      "<h3>{{section.title}}: {{title}}</h3>" +
-      "{{&descriptionHtml}}", this
-    )
+    this.popupContent = Handlebars.templates.place_popup_content(this)
     this.latLng = latlngForPlace(placeElt)
 
     this.markerVisible = true
@@ -121,9 +118,7 @@ function Locations() {
 
   this.createSectionControls = function () {
     $('#locations h2').after(
-      Mustache.render(
-        "<ul id='section_tabs'>{{#sections}}<li id='section_tab-{{sectionId}}' class='section_tab'><a href='#{{sectionId}}' data-section='{{sectionId}}'>{{title}}</a></li>{{/sections}}</ul>",
-        { sections: this.sections })
+      Handlebars.templates.locations_section_selector({ sections: this.sections })
     );
     $('li.section_tab a').click(function () {
       var sectionId = $(this).attr('data-section');
@@ -141,15 +136,7 @@ function Locations() {
       var section = _.find(self.sections, function(s) { return s.elementId == sectionElement.id; })
 
       $(sectionHeading).after(
-        Mustache.render(
-          "<p>"
-          + "<label class='show_section'>"
-          + "&nbsp;<input id='show_section-{{sectionId}}' data-section='{{sectionId}}' class='show_section' type='checkbox' checked='checked'> "
-          + "<span class='text'>Show the {{titleDowncase}} location{{plural}} on the map</span>"
-          + "</label>"
-          + "</p>",
-          section
-        )
+        Handlebars.templates.locations_section_display_control(section)
       )
     })
 

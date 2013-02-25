@@ -1,5 +1,6 @@
-#= require 'vendor/mustache'
+#= require 'vendor/handlebars.runtime.js'
 #= require 'vendor/underscore'
+#= require 'compiled_templates'
 
 (function() {
   $('a.comingsoon').click(function(e) {
