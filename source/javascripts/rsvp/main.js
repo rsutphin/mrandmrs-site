@@ -5,15 +5,27 @@ var RSVP = (function() {
 
   return {
     showFindInvitationPane: function() {
-      $('#pane').html(Handlebars.templates.rsvp_find_invitation)
+      $('#pane').html(Handlebars.templates.rsvp_find_invitation);
       $('form').submit(function() {
-        RSVP.get($('#rsvp-id').val())
+        RSVP.get($('#rsvp-id').val());
         return false;
       })
     },
 
-    showFormPane: function(invitation) {
-      $('#pane').html(Handlebars.templates.rsvp_response_form(invitation))
+    showFormPane: function(rsvpData) {
+      location.hash = "code=" + rsvpData.invitation.id;
+      $('#pane').html(Handlebars.templates.rsvp_response_form(rsvpData));
+    },
+
+    processHash: function() {
+      var matches, code;
+
+      matches = /code=(\w+)/.exec(location.hash)
+      if (!matches) return;
+      code = matches[1];
+
+      $('#rsvp-id').val(code);
+      RSVP.get(code);
     },
 
     get: function(code) {

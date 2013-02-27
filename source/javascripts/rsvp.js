@@ -3,5 +3,6 @@
 
 // on-load initialization
 (function() {
-  RSVP.showFindInvitationPane()
+  RSVP.showFindInvitationPane();
+  RSVP.processHash();
 })();
