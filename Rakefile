@@ -24,7 +24,7 @@ task :compile_js_templates do
   last_built_hash = JS_TEMPLATE_HASH_FILE.exist? ? JS_TEMPLATE_HASH_FILE.read : nil
 
   if current_hash != last_built_hash
-    sh "handlebars '#{templates.join("' '")}' -f source/javascripts/compiled_templates.js -o"
+    sh "handlebars '#{templates.join("' '")}' -f source/javascripts/compiled_templates.js -o -k each -k if -k attending_control"
     JS_TEMPLATE_HASH_FILE.open('w') { |f| f.write(current_hash) }
   end
 end

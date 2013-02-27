@@ -1,0 +1,46 @@
+<div id="response">
+  <h1>We hope you can join us</h1>
+
+  <p>Please let us know if you can come.
+
+  <form id="response-form">
+    <table>
+      {{#each guests}}
+      <tr>
+        <th rowspan="2">
+          {{name}}
+          <input type="hidden" name="guests[{{@index}}][id]" value="{{id}}">
+        </th>
+        <td class="attending" id="guests-{{id}}-attending-cell">
+          {{attending_control attending @index}}
+        </td>
+      </tr>
+      <tr>
+        <td class="entree-choice" id="guests-{{id}}-entree_choice-cell">
+          For dinner:
+          {{entree_choice_control entree_choice @index}}
+        </td>
+      </tr>
+      {{/each}}
+      <tr id="hotel-row">
+        <th>Hotel</th>
+        <td>
+          <input type="text"
+                 name="invitation[hotel]"
+                 value="{{invitation.hotel}}"
+                 placeholder="or whereever you'll be staying in Chicago">
+        </td>
+      </tr>
+      <tr id="comments-row">
+        <th>Comments</th>
+        <td>
+          <textarea name="invitation[response_comments]">{{invitation.response_comments}}</textarea>
+        </td>
+      </tr>
+    </table>
+
+    <div id="submit">
+      <span id="result-flash"></span><input type="submit" value="Let us know">
+    </div>
+  </form>
+</div>
