@@ -6,3 +6,5 @@ gem "redcarpet"
 
 gem 'jsmin'
 gem 'rake'
+
+gem 'rack-reverse-proxy'

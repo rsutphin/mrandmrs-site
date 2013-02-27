@@ -8,6 +8,12 @@ files.changed /handlebars-templates/ do |path|
   system("bundle exec rake compile_js_templates")
 end
 
+require 'rack/reverse_proxy'
+use Rack::ReverseProxy do
+  # Forward the path /test* to http://example.com/test*
+  reverse_proxy '/invitations', 'http://localhost:3000/'
+end
+
 ###
 # Compass
 ###
