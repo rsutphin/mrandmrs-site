@@ -4,6 +4,10 @@ set :markdown_engine, :redcarpet
 #Livereload
 activate :livereload
 
+files.changed /handlebars-templates/ do |path|
+  system("bundle exec rake compile_js_templates")
+end
+
 ###
 # Compass
 ###
