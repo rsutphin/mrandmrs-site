@@ -5,18 +5,23 @@ var RSVP = (function() {
     RSVP.showFormPane(data)
   }
 
+  function getFailed(jqXHR) {
+    requestFailed(jqXHR);
+    $('#result-flash').append("Please verify the code from your invitation envelope and try again. The code is on a white card separate from the main invitation.")
+  }
+
   function updateSuccessful() {
     flash('goodnews', "RSVP update received. Thanks!");
     RSVP.loadedData = RSVP.formData();
   }
 
-  function updateFailed(jqXHR) {
+  function requestFailed(jqXHR) {
     var contentType = jqXHR.getResponseHeader('Content-Type');
     if (jqXHR.status && 400 <= jqXHR.status && jqXHR.status < 500 && /json/.test(contentType)) {
       displayErrors(JSON.parse(jqXHR.responseText));
     } else {
-      // displayGeneralError
-      console.log("General error", arguments)
+      clearFlash();
+      // show general error box
     }
   }
 
@@ -28,6 +33,10 @@ var RSVP = (function() {
         elt.html('');
       });
     }
+  }
+
+  function clearFlash() {
+    $('#result-flash').html('').removeClass();
   }
 
   function displayErrors(errors) {
@@ -166,9 +175,14 @@ var RSVP = (function() {
     },
 
     get: function(code) {
+      if (!code || code == "") {
+        clearFlash();
+        return;
+      }
+
       $.ajax('/invitations/' + code)
         .done(changeInvitation)
-        .fail(function() { console.log('Error'); console.log(arguments) });
+        .fail(getFailed);
     },
 
     put: function(data) {
@@ -180,7 +194,7 @@ var RSVP = (function() {
 
       $.ajax('/invitations/' + data.invitation.id, options)
         .done(updateSuccessful)
-        .fail(updateFailed);
+        .fail(requestFailed);
     }
   }
 })();

@@ -57,6 +57,18 @@ body.rsvp {
     form {
       text-align: center
     }
+
+    #result-flash {
+      font-family: $imprima;
+      font-size: 1.5em;
+      text-align: center;
+      width: 75%;
+      margin: 0 auto;
+
+      ul li {
+        list-style-type: none;
+      }
+    }
   }
 
   #response-form {
