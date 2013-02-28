@@ -1,12 +1,24 @@
 RSVP.HandlebarsHelpers = (function() {
-  function radio(inputName, value, text, selected) {
+  function radio(inputName, value, text, selected, moreInputAttributes) {
+    var out = "<label>";
+
+    out += radioOnly(inputName, value, selected, moreInputAttributes)
+        + " <span>" + text + "</span></label>";
+
+    return out;
+  }
+
+  function radioOnly(inputName, value, selected, moreInputAttributes) {
     var out;
 
-    out = "<label><input type=\"radio\" name=\"" + inputName + "\" value=\"" + value + "\"";
+    out = "<input type=\"radio\" name=\"" + inputName + "\" value=\"" + value + "\"";
     if (selected) {
       out += " checked";
     }
-    out += "> <span>" + text + "</span></label>";
+    if (moreInputAttributes) {
+      out += " " + moreInputAttributes;
+    }
+    out += ">";
 
     return out;
   }
@@ -58,6 +70,10 @@ RSVP.HandlebarsHelpers = (function() {
 
       if (currentValue && !_.contains(RSVP.HandlebarsHelpers.ENTREE_CHOICES, currentValue)) {
         out += "<li>" + radio(inputName, currentValue, currentValue + " <em>(off-menu choice)<em>", true) + "</li>\n";
+      }
+
+      if (!currentValue) {
+        out += radioOnly(inputName, "", true, "class=\"hidden\"");
       }
 
       out += "</ul>"

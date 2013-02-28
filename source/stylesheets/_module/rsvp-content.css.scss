@@ -69,6 +69,14 @@ body.rsvp {
       }
     }
 
+    input.name {
+      border: 0;
+      font-family: inherit;
+      color: inherit !important;
+      font-weight: inherit;
+      text-align: inherit;
+    }
+
     tr.for-all {
       input, textarea {
         width: 95%;
@@ -108,6 +116,12 @@ body.rsvp {
             border-color: $content-background-color;
           }
         }
+      }
+
+      // There can be a hidden radio button in some controls so that the form
+      // exactly matches the JSON at all times.
+      input.hidden {
+        display: none;
       }
     }
 
