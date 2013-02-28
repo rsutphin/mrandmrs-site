@@ -5,4 +5,6 @@
 (function() {
   RSVP.showFindInvitationPane();
   RSVP.processHash();
+
+  $(window).on('hashchange', RSVP.processHash);
 })();
