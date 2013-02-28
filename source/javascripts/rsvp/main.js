@@ -27,7 +27,7 @@ var RSVP = (function() {
 
   function flash(kind, message) {
     var elt = $('#result-flash')
-    elt.stop().removeClass().addClass(kind).html(message).show();
+    elt.stop().removeClass().addClass(kind).html(message).css('opacity', 1);
     if (kind === 'goodnews') {
       elt.fadeOut(15000, function () {
         elt.html('');
@@ -177,6 +177,11 @@ var RSVP = (function() {
     get: function(code) {
       if (!code || code == "") {
         clearFlash();
+        return;
+      }
+
+      if (code == 'W3D4KR') {
+        flash('goodnews', "Very funny. Please enter your actual invitation code. It's on a white card in your invitation envelope.")
         return;
       }
 
