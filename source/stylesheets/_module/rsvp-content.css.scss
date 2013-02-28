@@ -26,6 +26,18 @@ body.rsvp {
     padding: 0.25em;
   }
 
+  .goodnews {
+    color: $goodnews-color;
+  }
+
+  .badnews {
+    color: $badnews-color;
+  }
+
+  .justnews {
+    color: $justnews-color;
+  }
+
   #find-invitation {
     input {
       font-size: 4em;
@@ -127,15 +139,22 @@ body.rsvp {
 
     div#submit {
       margin-top: 1em;
+      font-family: $imprima;
+      vertical-align: middle;
 
       text-align: right;
       white-space: nowrap;
 
       input {
-        font-family: $imprima;
+        font-family: inherit;
         border-radius: 5px;
         padding: 5px;
         font-size: 2em;
+      }
+
+      #result-flash {
+        font-size: 1.5em;
+        margin-right: 0.7em;
       }
     }
   }

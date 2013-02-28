@@ -6,11 +6,35 @@ var RSVP = (function() {
   }
 
   function updateSuccessful() {
-    flash('goodnews', "RSVP update received");
+    flash('goodnews', "RSVP update received. Thanks!");
+    RSVP.loadedData = RSVP.formData();
+  }
+
+  function updateFailed(jqXHR) {
+    var contentType = jqXHR.getResponseHeader('Content-Type');
+    if (jqXHR.status && 400 <= jqXHR.status && jqXHR.status < 500 && /json/.test(contentType)) {
+      displayErrors(JSON.parse(jqXHR.responseText));
+    } else {
+      // displayGeneralError
+      console.log("General error", arguments)
+    }
   }
 
   function flash(kind, message) {
-    $('#result-flash').removeClass().addClass(kind).html(message);
+    var elt = $('#result-flash')
+    elt.stop().removeClass().addClass(kind).html(message).show();
+    if (kind === 'goodnews') {
+      elt.fadeOut(15000, function () {
+        elt.html('');
+      });
+    }
+  }
+
+  function displayErrors(errors) {
+    // top-level errors key present
+    if (errors['errors']) {
+      flash('badnews', Handlebars.templates.rsvp_errors_list(errors));
+    }
   }
 
   /*
@@ -156,7 +180,7 @@ var RSVP = (function() {
 
       $.ajax('/invitations/' + data.invitation.id, options)
         .done(updateSuccessful)
-        .fail(function() { console.log('Error'); console.log(arguments) });
+        .fail(updateFailed);
     }
   }
 })();
