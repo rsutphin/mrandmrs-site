@@ -171,4 +171,30 @@ body.rsvp {
       }
     }
   }
+
+  #loading {
+    display: none;
+    position: absolute;
+    background-color: transparentize($content-background-color, 0.50);
+    z-index: 100;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: -0.5em 0 0 -0.5em;
+    font-size: 2.0em;
+
+    #loading-message {
+      position: absolute;
+      width: 50%;
+      height: 90px;
+      margin: auto;
+
+      background-color: $content-background-color;
+      border: 2px solid $content-foreground-color;
+      border-radius: inherit;
+
+      font-family: $imprima;
+      text-align: center;
+      line-height: 90px;
+    }
+  }
 }

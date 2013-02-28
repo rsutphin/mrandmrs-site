@@ -46,6 +46,34 @@ var RSVP = (function() {
     }
   }
 
+  function overlayLoadingPane(message) {
+    var toCover = $('#pane');
+
+    createLoadingPaneIfNecessary(toCover);
+
+    var loading = $('#loading')
+      .width(toCover.width())
+      .height(toCover.height())
+      .css(toCover.position())
+      .fadeIn(250);
+
+    var loadingMessage = $('#loading-message');
+
+    loadingMessage.css({
+      top: loading.innerHeight() / 2 - loadingMessage.outerHeight() / 2,
+      left: loading.innerWidth() / 2 - loadingMessage.outerWidth() / 2
+    }).html(message)
+  }
+
+  function createLoadingPaneIfNecessary(toCover) {
+    if ($('#loading')[0]) return;
+    toCover.prepend('<div id="loading"><div id="loading-message"></div></div>');
+  }
+
+  function dropLoadingPane() {
+    $('#loading').fadeOut(250);
+  }
+
   /*
    * Recursively performs the following substitutions over an array or object:
    * - "" into null
@@ -157,6 +185,10 @@ var RSVP = (function() {
       });
     },
 
+    overlayLoadPane: function(message) {
+      overlayLoadPane(message)
+    },
+
     processHash: function() {
       var code, matches;
 
@@ -185,12 +217,17 @@ var RSVP = (function() {
         return;
       }
 
+      overlayLoadingPane('Searching...');
+
       $.ajax('/invitations/' + code)
         .done(changeInvitation)
-        .fail(getFailed);
+        .fail(getFailed)
+        .always(dropLoadingPane);
     },
 
     put: function(data) {
+      overlayLoadingPane('Updating...');
+
       var options = {
         type: 'PUT',
         data: JSON.stringify(data),
@@ -199,7 +236,8 @@ var RSVP = (function() {
 
       $.ajax('/invitations/' + data.invitation.id, options)
         .done(updateSuccessful)
-        .fail(requestFailed);
+        .fail(requestFailed)
+        .always(dropLoadingPane);
     }
   }
 })();
