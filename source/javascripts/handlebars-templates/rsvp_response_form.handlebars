@@ -5,42 +5,48 @@
 
   <form id="response-form">
     <table>
-      {{#each guests}}
       <tr>
-        <th rowspan="2">
+        <th></th>
+        <th></th>
+        <th>E-mail Address</th>
+        <th>For Dinner?</th>
+      </tr>
+      {{#each guests}}
+      <tr class="{{evenOdd @index}} guest">
+        <th class="row name">
           {{name}}
           <input type="hidden" name="guests[{{@index}}][id]" value="{{id}}">
         </th>
         <td class="attending" id="guests-{{id}}-attending-cell">
           {{attending_control attending @index}}
         </td>
-      </tr>
-      <tr>
-        <td class="entree-choice" id="guests-{{id}}-entree_choice-cell">
-          For dinner:
+        <td class="email_address" id="guests-{{id}}-email_address-cell">
+          <input type="text" name="guests[{{@index}}][id]" value="{{email_address}}" placeholder="to receive e-mail updates">
+        </td>
+        <td class="entree_choice" id="guests-{{id}}-entree_choice-cell">
           {{entree_choice_control entree_choice @index}}
         </td>
       </tr>
       {{/each}}
-      <tr id="hotel-row">
-        <th>Hotel</th>
-        <td>
+      <tr id="hotel-row" class="for-all {{evenOddAfterList guests 0}}">
+        <th class="row">Hotel</th>
+        <td colspan="3">
           <input type="text"
                  name="invitation[hotel]"
                  value="{{invitation.hotel}}"
-                 placeholder="or whereever you'll be staying in Chicago">
+                 placeholder="Where will you be staying when you're in Chicago?">
         </td>
       </tr>
-      <tr id="comments-row">
-        <th>Comments</th>
-        <td>
-          <textarea name="invitation[response_comments]">{{invitation.response_comments}}</textarea>
+      <tr id="comments-row" class="for-all {{evenOddAfterList guests 1}}">
+        <th class="row">Comments</th>
+        <td colspan="3">
+          <textarea name="invitation[response_comments]" placeholder="Is there anything else you'd like us to know?">{{invitation.response_comments}}</textarea>
         </td>
       </tr>
     </table>
 
     <div id="submit">
-      <span id="result-flash"></span><input type="submit" value="Let us know">
+      <span id="result-flash"></span><input type="submit" value="Send RSVP">
     </div>
   </form>
 </div>

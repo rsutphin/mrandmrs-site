@@ -1,6 +1,31 @@
 @import '_module/variables';
 
 body.rsvp {
+  input, textarea {
+    font-family: $body-fonts;
+  }
+
+  input[type="submit"] {
+    background-color: $content-background-color - #111;
+
+    &:hover {
+      color: $content-link-hover;
+      // border-color: $content-link-hover;
+    }
+  }
+
+  input[type="text"] {
+    border: 0;
+    border-bottom: 2px dotted $content-foreground-color;
+    background-color: transparent;
+  }
+
+  textarea {
+    border: 1px dotted $content-foreground-color;
+    background-color: transparent;
+    padding: 0.25em;
+  }
+
   #find-invitation {
     input {
       font-size: 4em;
@@ -10,23 +35,94 @@ body.rsvp {
 
     input[type="text"] {
       width: 6em;
-      border: 0;
-      border-bottom: 2px dotted $content-foreground-color;
     }
 
     input[type="submit"] {
       margin-left: 0.5em;
       border-radius: 0.1em;
-      background-color: $content-background-color - #111;
-
-      &:hover {
-        color: $content-link-hover;
-        // border-color: $content-link-hover;
-      }
     }
 
     form {
       text-align: center
+    }
+  }
+
+  #response-form {
+    table, #submit {
+      width: 96%;
+    }
+
+    tr.even {
+      background-color: #eef2ee;
+    }
+
+    td, th {
+      vertical-align: top;
+      padding: 0.5em;
+    }
+
+    th {
+      font-family: $imprima;
+
+      &.row {
+        text-align: right;
+      }
+    }
+
+    tr.for-all {
+      input, textarea {
+        width: 95%;
+      }
+
+      textarea {
+        height: 6em;
+      }
+    }
+
+    td.email_address input {
+      width: 14em;
+    }
+
+    ul.radio-select {
+      padding: 0;
+      // labels have top padding. Pull up to maintain line alignment across row.
+      margin: -0.2em 0 0 0;
+
+      li {
+        list-style-type: none;
+        width: 100%;
+
+        label {
+          padding: 0.2em 0.3em;
+          border-radius: 5px;
+
+          display: block;
+
+          &:hover {
+            background-color: $content-block-hover;
+            cursor: pointer;
+          }
+
+          &.checked {
+            background-color: #eee;
+            border-color: $content-background-color;
+          }
+        }
+      }
+    }
+
+    div#submit {
+      margin-top: 1em;
+
+      text-align: right;
+      white-space: nowrap;
+
+      input {
+        font-family: $imprima;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 2em;
+      }
     }
   }
 }

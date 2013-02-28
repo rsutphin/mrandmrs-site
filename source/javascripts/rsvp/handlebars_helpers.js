@@ -6,16 +6,24 @@ RSVP.HandlebarsHelpers = (function() {
     if (selected) {
       out += " checked";
     }
-    out += "> " + text + "</label>";
+    out += "> <span>" + text + "</span></label>";
 
     return out;
   }
 
   return {
+    evenOdd: function(index) {
+      return index % 2 == 0 ? 'even' : 'odd';
+    },
+
+    evenOddAfterList: function(list, postListIndex) {
+      return ((list.length + postListIndex) % 2 == 0) ? 'even' : 'odd';
+    },
+
     ATTENDING_RESPONSES: {
-      "has not decided whether to attend": null,
-      "will attend": true,
-      "regretfully declines": false
+      "will be there": true,
+      "regretfully declines": false,
+      "is not sure yet": null
     },
 
     attending_control: function(currentValue, guestIndex) {
@@ -49,7 +57,7 @@ RSVP.HandlebarsHelpers = (function() {
       });
 
       if (currentValue && !_.contains(RSVP.HandlebarsHelpers.ENTREE_CHOICES, currentValue)) {
-        out += "<li>" + radio(inputName, currentValue, currentValue + " (off-menu choice)", true) + "</li>\n";
+        out += "<li>" + radio(inputName, currentValue, currentValue + " <em>(off-menu choice)<em>", true) + "</li>\n";
       }
 
       out += "</ul>"
