@@ -113,14 +113,20 @@ var RSVP = (function() {
     },
 
     processHash: function() {
-      var matches, code;
+      var code, matches;
 
       matches = /code=(\w+)/.exec(location.hash)
-      if (!matches) return;
-      code = matches[1];
+      if (matches) {
+        code = matches[1];
+      }
 
-      $('#rsvp-id').val(code);
-      RSVP.get(code);
+      if (!code) {
+        RSVP.showFindInvitationPane();
+      } else if (code != RSVP.loadedCode) {
+        RSVP.showFindInvitationPane();
+        $('#rsvp-id').val(code);
+        $('form').submit();
+      }
     },
 
     get: function(code) {
