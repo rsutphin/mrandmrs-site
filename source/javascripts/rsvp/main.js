@@ -5,6 +5,14 @@ var RSVP = (function() {
     RSVP.showFormPane(data)
   }
 
+  function updateSuccessful() {
+    flash('goodnews', "RSVP update received");
+  }
+
+  function flash(kind, message) {
+    $('#result-flash').removeClass().addClass(kind).html(message);
+  }
+
   /*
    * Recursively performs the following substitutions over an array or object:
    * - "" into null
@@ -110,6 +118,10 @@ var RSVP = (function() {
     showFormPane: function(rsvpData) {
       location.hash = "code=" + rsvpData.invitation.id;
       $('#pane').html(Handlebars.templates.rsvp_response_form(rsvpData));
+      $('form').submit(function() {
+        RSVP.put(RSVP.formData());
+        return false;
+      });
     },
 
     processHash: function() {
@@ -132,7 +144,19 @@ var RSVP = (function() {
     get: function(code) {
       $.ajax('/invitations/' + code)
         .done(changeInvitation)
-        .fail(function() { console.log('Error'); console.log(arguments) })
+        .fail(function() { console.log('Error'); console.log(arguments) });
+    },
+
+    put: function(data) {
+      var options = {
+        type: 'PUT',
+        data: JSON.stringify(data),
+        contentType: 'application/json'
+      }
+
+      $.ajax('/invitations/' + data.invitation.id, options)
+        .done(updateSuccessful)
+        .fail(function() { console.log('Error'); console.log(arguments) });
     }
   }
 })();
