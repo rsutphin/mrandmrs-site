@@ -33,9 +33,9 @@ RSVP.HandlebarsHelpers = (function() {
     },
 
     ATTENDING_RESPONSES: {
-      "will be there": true,
-      "regretfully declines": false,
-      "is not sure yet": null
+      "can't wait!": true,
+      "can't come.": false,
+      "can't decide.": null
     },
 
     attending_control: function(currentValue, guestIndex) {
@@ -54,8 +54,8 @@ RSVP.HandlebarsHelpers = (function() {
     },
 
     ENTREE_CHOICES: [
-      "Smoked Beef Brisket",
-      "Smoked Pork Loin",
+      "Beef Brisket",
+      "Pork Loin",
       "Black Bean and Faro Cakes"
     ],
 
