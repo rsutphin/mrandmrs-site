@@ -90,6 +90,10 @@ body.rsvp {
     td, th {
       vertical-align: top;
       padding: 0.5em;
+
+      &.has-errors {
+        border: 2px solid $badnews-color
+      }
     }
 
     th {
@@ -174,6 +178,17 @@ body.rsvp {
       #result-flash {
         font-size: 1.5em;
         margin-right: 0.7em;
+      }
+    }
+
+    ul.validation-errors {
+      color: $badnews-color;
+      margin: 0;
+      padding: 0 0 0 1.5em;
+
+      li {
+        margin: 0;
+        padding: 0;
       }
     }
   }

@@ -12,7 +12,7 @@
       </tr>
       {{#each guests}}
       <tr class="{{evenOdd @index}} guest">
-        <th class="row name">
+        <th class="row name" id="guests-{{id}}-name-cell">
           <input type="text" name="guests[{{@index}}][name]" value="{{name}}" readonly class="name">
           <input type="hidden" name="guests[{{@index}}][id]" value="{{id}}">
           <input type="hidden" name="invitation[guests][]" value="{{id}}">

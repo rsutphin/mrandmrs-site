@@ -49,6 +49,21 @@ var RSVP = (function() {
     if (errors['errors']) {
       flash('badnews', Handlebars.templates.rsvp_errors_list(errors));
     }
+    if (errors['guests']) {
+      _.each(errors['guests'], function(g) {
+        _.each(g['errors'], function(errorMessages, attribute) {
+          var cell = $("#guests-" + g.id + "-" + attribute + "-cell")
+          cell.addClass('has-errors')
+
+          var messagesContent = Handlebars.templates.validation_errors({ messages: errorMessages });
+          if (cell.find('.validation-errors').size() > 0) {
+            cell.find('.validation-errors').show().replaceAll(messagesContent);
+          } else {
+            cell.append(messagesContent);
+          }
+        });
+      });
+    }
   }
 
   function overlayLoadingPane(message) {
@@ -261,6 +276,9 @@ var RSVP = (function() {
 
     put: function(data) {
       overlayLoadingPane('Updating...');
+
+      $('.has-errors').removeClass('has-errors');
+      $('.validation-errors').hide();
 
       var options = {
         type: 'PUT',
