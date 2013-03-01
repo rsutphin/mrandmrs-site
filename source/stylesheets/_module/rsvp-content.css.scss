@@ -26,16 +26,23 @@ body.rsvp {
     padding: 0.25em;
   }
 
-  .goodnews {
-    color: $goodnews-color;
-  }
+  #result-flash {
+    font-family: $imprima;
+    color: $content-background-color;
+    border-radius: 5px;
+    padding: 5px;
 
-  .badnews {
-    color: $badnews-color;
-  }
+    &.goodnews {
+      background-color: $goodnews-color;
+    }
 
-  .justnews {
-    color: $justnews-color;
+    &.badnews {
+      background-color: $badnews-color;
+    }
+
+    &.justnews {
+      background-color: $justnews-color;
+    }
   }
 
   #find-invitation {
@@ -59,7 +66,6 @@ body.rsvp {
     }
 
     #result-flash {
-      font-family: $imprima;
       font-size: 1.5em;
       text-align: center;
       width: 75%;

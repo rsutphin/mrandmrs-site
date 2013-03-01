@@ -7,7 +7,7 @@ var RSVP = (function() {
 
   function getFailed(jqXHR) {
     requestFailed(jqXHR);
-    $('#result-flash').append("Please verify the code from your invitation envelope and try again. The code is on a white card separate from the main invitation.")
+    appendFlash('badnews', "Please verify the code from your invitation envelope and try again. The code is on a white card separate from the main invitation.")
   }
 
   function updateSuccessful() {
@@ -29,10 +29,14 @@ var RSVP = (function() {
     var elt = $('#result-flash')
     elt.stop().removeClass().addClass(kind).html(message).css('opacity', 1);
     if (kind === 'goodnews') {
-      elt.fadeOut(15000, function () {
+      elt.fadeOut(30000, function () {
         elt.html('');
       });
     }
+  }
+
+  function appendFlash(kind, message) {
+    flash(kind, $('#result-flash').html() + message)
   }
 
   function clearFlash() {
