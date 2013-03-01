@@ -10,8 +10,7 @@ end
 
 require 'rack/reverse_proxy'
 use Rack::ReverseProxy do
-  # Forward the path /test* to http://example.com/test*
-  reverse_proxy '/invitations', 'http://localhost:3000/'
+  reverse_proxy /^\/api(\/.*)$/, 'http://localhost:3000$1'
 end
 
 ###

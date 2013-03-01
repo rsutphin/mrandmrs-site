@@ -268,7 +268,7 @@ var RSVP = (function() {
 
       overlayLoadingPane('Searching...');
 
-      $.ajax('/invitations/' + code)
+      $.ajax('/api/invitations/' + code)
         .done(changeInvitation)
         .fail(getFailed)
         .always(dropLoadingPane);
@@ -286,7 +286,7 @@ var RSVP = (function() {
         contentType: 'application/json'
       }
 
-      $.ajax('/invitations/' + data.invitation.id, options)
+      $.ajax('/api/invitations/' + data.invitation.id, options)
         .done(updateSuccessful)
         .fail(requestFailed)
         .always(dropLoadingPane);
