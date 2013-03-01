@@ -13,6 +13,7 @@ end
 
 task :deploy => :build do
   sh 'rsync -vlr --del build/ detailedbalance.net:/var/www/mrandmrs-static/'
+  sh 'ssh detailedbalance.net "cd /var/www/mrandmrs-static && ln -s /var/www/apps/mrandmrs-api/public api"'
 end
 
 task :compile_js_templates do
