@@ -21,7 +21,8 @@ var RSVP = (function() {
       displayErrors(JSON.parse(jqXHR.responseText));
     } else {
       clearFlash();
-      // show general error box
+      showGeneralErrorBox("Unexpected server error or server error response.<br>" +
+        jqXHR.status + " / " + jqXHR.statusText + " / " + contentType);
     }
   }
 
@@ -75,7 +76,31 @@ var RSVP = (function() {
   }
 
   function dropLoadingPane() {
-    $('#loading').fadeOut(250);
+    $('#loading').hide();
+  }
+
+  function showGeneralErrorBox(additionalMessage) {
+    var relativeTo = $('#pane');
+    createGeneralErrorsBoxIfNecessary(relativeTo);
+
+    var box = $('#general-errors');
+    box.html(Handlebars.templates.rsvp_general_error_box({
+      entree_choices: RSVP.HandlebarsHelpers.ENTREE_CHOICES,
+      message: new Handlebars.SafeString(additionalMessage)
+    })).css({
+      top: relativeTo.position().top - 32,
+      left: relativeTo.position().left + relativeTo.innerWidth() / 2 - box.outerWidth() / 2
+    }).show().find('div.dismiss button').on('click', hideGeneralErrorBox);
+  }
+
+  function createGeneralErrorsBoxIfNecessary(toCover) {
+    if ($('#general-errors')[0]) return;
+    toCover.prepend('<div id="general-errors"></div>');
+  }
+
+  function hideGeneralErrorBox() {
+    clearFlash();
+    $('#general-errors').hide();
   }
 
   /*
@@ -191,6 +216,11 @@ var RSVP = (function() {
 
     overlayLoadPane: function(message) {
       overlayLoadPane(message)
+    },
+
+    onerror: function(message, url, line) {
+      showGeneralErrorBox("JavaScript error.<br>" + message + " / " + url + " / " + line);
+      return false;
     },
 
     processHash: function() {

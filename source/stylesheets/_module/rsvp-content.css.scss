@@ -5,7 +5,7 @@ body.rsvp {
     font-family: $body-fonts;
   }
 
-  input[type="submit"] {
+  input[type="submit"], button {
     background-color: $content-background-color - #111;
 
     &:hover {
@@ -201,6 +201,62 @@ body.rsvp {
       font-family: $imprima;
       text-align: center;
       line-height: 90px;
+    }
+  }
+
+  #general-errors {
+    position: absolute;
+    width: 80%;
+    z-index: 100;
+    margin: auto;
+    border: 2px solid $badnews-color;
+    background-color: $content-background-color;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    h2 {
+      font-family: $imprima;
+      color: $badnews-color;
+      margin-top: 0;
+      border-bottom: 2px solid $badnews-color;
+    }
+
+    div.dismiss {
+      text-align: center;
+    }
+
+    button {
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    ul.voicemail {
+      font-family: $imprima;
+
+      & > li {
+        font-size: 1.5em;
+      }
+
+      ul {
+        margin: 0;
+        font-family: $body-fonts;
+
+        li {
+          font-size: 0.7em;
+        }
+      }
+    }
+
+    .details {
+      font-size: 0.8em;
+      border-top: 1px dotted $badnews-color;
+      margin-top: 2em;
+      color: #666;
+
+      h3 {
+        font-family: inherit;
+        margin: 0.25em 0;
+      }
     }
   }
 }
