@@ -216,7 +216,7 @@ var RSVP = (function() {
         return;
       }
 
-      if (code == 'W3D4KR') {
+      if (code.toUpperCase() == 'W3D4KR') {
         flash('goodnews', "Very funny. Please enter your actual invitation code. It's on a white card in your invitation envelope.")
         return;
       }
