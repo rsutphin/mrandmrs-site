@@ -79,7 +79,38 @@ RSVP.HandlebarsHelpers = (function() {
       out += "</ul>"
 
       return new Handlebars.SafeString(out);
-    }
+    },
+
+    any_rehearsal_dinner: function(guests, options) {
+      var any = _.any(this.guests, function(guest) { return guest.invited_to_rehearsal_dinner; })
+      if (any) {
+        return options.fn(this);
+      } else {
+        return null;
+      }
+    },
+
+    ATTENDING_REHEARSAL_DINNER_RESPONSES: {
+      "Another dinner on 5/17 sounds tasty": true,
+      "Regrets": false,
+      "Not sure": null
+    },
+
+    attending_rehearsal_dinner_control: function(currentValue, guestIndex) {
+      var out = "<ul class='radio-select attending_rehearsal_dinner'>\n";
+
+      var inputName = "guests[" + guestIndex + "][attending_rehearsal_dinner]";
+
+      _.each(RSVP.HandlebarsHelpers.ATTENDING_REHEARSAL_DINNER_RESPONSES, function(dataValue, text) {
+        var inputValue = dataValue === null ? '' : dataValue
+        out += "<li class=" + dataValue + ">" + radio(inputName, inputValue, text, currentValue === dataValue) + "</li>\n";
+      });
+
+      out += "</ul>"
+
+      return new Handlebars.SafeString(out);
+    },
+
   }
 })();
 

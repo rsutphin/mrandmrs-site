@@ -8,7 +8,7 @@
         <th></th>
         <th></th>
         <th>E-mail Address</th>
-        <th>For Dinner?</th>
+        <th>Reception Dinner?</th>
       </tr>
       {{#each guests}}
       <tr class="{{evenOdd @index}} guest">
@@ -44,6 +44,37 @@
         </td>
       </tr>
     </table>
+
+    {{#any_rehearsal_dinner guests}}
+    <div id="rehearsal-dinner">
+      <h2>Rehearsal dinner</h2>
+      <p>
+      Since you'll be joining us from far away, we would also like to invite you to
+      the rehearsal dinner. It will be on Friday evening at around 6pm. If you'll
+      be in town then, please let us know if you can join us for dinner on that
+      day.
+      <p>
+      If you are able to make it, we'll send specifics in an e-mail closer to the
+      date. Make sure we've got at least one e-mail address for your party (above).
+
+      <ul id="attending_rehearsal_dinner-row">
+        {{#each guests}}
+          {{#if invited_to_rehearsal_dinner}}
+          <li id="guests-{{id}}-attending_rehearsal_dinner-cell" class="{{evenOdd @index}}">
+            <input type="hidden" name="guests[{{@index}}][invited_to_rehearsal_dinner]" value="{{invited_to_rehearsal_dinner}}">
+            <em class="name">{{name}}</em>
+            {{attending_rehearsal_dinner_control attending_rehearsal_dinner @index}}
+          </il>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+    {{/any_rehearsal_dinner}}
+
+    <p>
+    Please note: if you need to change any selections on this page, please feel
+    free to come back any time before <em>April 18</em>.
+    But don't lose your RSVP code! It's <strong>{{invitation.id}}</strong>.
 
     <div id="submit">
       <span id="result-flash"></span><input type="submit" value="Send RSVP">

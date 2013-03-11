@@ -5,6 +5,10 @@ body.rsvp {
     font-family: $body-fonts;
   }
 
+  p {
+    clear: both;
+  }
+
   input[type="submit"], button {
     background-color: $content-background-color - #111;
 
@@ -83,7 +87,7 @@ body.rsvp {
       width: 96%;
     }
 
-    tr.even {
+    tr.even, li.even {
       background-color: #eef2ee;
     }
 
@@ -158,6 +162,49 @@ body.rsvp {
       input.hidden {
         display: none;
       }
+    }
+
+    div#rehearsal-dinner {
+      border: 1px dotted $content-block-hover;
+      border-radius: 5px;
+      padding: 0.5em;
+      margin: 1em;
+      width: 90%;
+
+      h2 {
+        margin-top: 0px;
+      }
+    }
+
+    ul#attending_rehearsal_dinner-row {
+      padding: 0;
+      margin: 0;
+
+      em.name {
+        font-family: $imprima;
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      & > li {
+        list-style-type: none;
+        clear: both;
+        padding: 0.2em;
+
+        ul.radio-select {
+          overflow: hidden;
+          li {
+            float: left;
+            width: 20%;
+
+            &.true {
+              width: 40%;
+            }
+          }
+        }
+      }
+
+      clear: both;
     }
 
     div#submit {
