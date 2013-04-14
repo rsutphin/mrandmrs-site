@@ -56,6 +56,12 @@ photos).
 
 [sprung]: http://sprungphoto.com/
 
+## RSVP service
+
+The RSVP section of the site consumes [an API][rsvp-api] which also open source.
+
+[rsvp-api]: https://github.com/rsutphin/mrandmrs-rsvp-api
+
 # License (MIT)
 
 All included resources not separately credited above are Copyright (c) 2013,
