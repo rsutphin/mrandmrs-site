@@ -16,15 +16,14 @@ This site was built with [Middleman][] using [HTML5 Boilerplate][], [Haml][], an
 
 ## Resources
 
-The [damask border][damask-border] in the sidebar is derived from
+The damask border in the sidebar is derived from
 [Black Wallpaper][] by MUJKA ILLUSTRATION. The original is licensed
 [Creative Commons Attribution-NonCommercial-ShareAlike][CC-BY-NC-SA] and so is
-our [derived version][damask-border]. The derived version may be attributed to
+our derived version. The derived version may be attributed to
 Rhett Sutphin.
 
 [Black Wallpaper]: http://qvectors.net/misc-vectors/black-wallpaper-vecto/
 [CC-BY-NC-SA]: http://creativecommons.org/licenses/by-nc-sa/3.0/
-[damask-border]: /images/blackwallpaper-lightened-slice-200px.png
 
 The headline fonts used are:
 
